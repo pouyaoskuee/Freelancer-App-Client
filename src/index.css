@@ -1,15 +1,11 @@
-/*imports*/
+/**************************  imports  **************************/
 @import "tailwindcss";
 @import "./../public/font.css";
 
-/* tailwind layers*/
-
-@import "tailwindcss";
-
+/**************************  tailwind layers  **************************/
 @utility container {
-    @apply mx-auto;
+    @apply mx-auto py-1 px-2;
 }
-
 
 @theme {
 
@@ -45,12 +41,32 @@
     --color-red-500: rgb(239, 68, 68);
     --color-red-300: rgb(252, 165, 165);
 
+}
 
+
+/**************************   resets & configs   **************************/
+
+html{
+    scroll-behavior: smooth;
 
 }
 
-/*root and reset*/
 body{
     font-family: var(--font-vazir) , sans-serif;
     background-color: var(--color-backgrund);
 }
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+
+button:disabled {
+    cursor: default;
+    background-color: rgb(var(--color-secondary-100), 0.5);
+    pointer-events: none;
+    box-shadow: none;
+}
+
+

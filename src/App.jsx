@@ -1,13 +1,15 @@
-import './App.css'
 import {Route, Routes} from "react-router-dom";
-import Auth from "./components/Auth/Auth.jsx";
+import Auth from "./pages/Auth.jsx";
 
 function App() {
 
   return (
-      <Routes>
-          <Route path="/auth" component={Auth} />
-      </Routes>
+      <div className={'container'}>
+          <Routes>
+              <Route path="/auth" element={<Auth/>} />
+          </Routes>
+      </div>
+
 
   )
 }
