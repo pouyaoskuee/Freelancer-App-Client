@@ -5,6 +5,7 @@
 /**************************  tailwind layers  **************************/
 @utility container {
     @apply mx-auto py-1 px-2;
+
 }
 
 @theme {
@@ -41,6 +42,24 @@
     --color-red-500: rgb(239, 68, 68);
     --color-red-300: rgb(252, 165, 165);
 
+}
+
+@layer components {
+    .btn{
+        @apply py-1 px-2 rounded-lg transition-all duration-300
+    }
+
+    .btn--primary{
+        @apply text-secondary-50 bg-primary-900 hover:bg-primary-800 shadow-lg shadow-primary-300
+    }
+
+    .btn--secondary{
+        @apply text-secondary-100 bg-secondary-300 hover:bg-secondary-200 shadow-lg shadow-secondary-300
+    }
+
+    .numberInput{
+        @apply  border border-gray-200 bg-gray-100 text-secondary-900 rounded-lg p-1 hover:border-primary-500 focus:outline-none focus:bg-white focus:border-primary-500 focus:shadow-lg focus:shadow-primary-200
+    }
 }
 
 
