@@ -1,9 +1,9 @@
 
-function NumberInput({label, value, onChange , Handler}) {
+function NumberInput({label, value, onChange , handler}) {
 
 
     return (
-        <form className={'flex flex-col gap-2'} onSubmit={Handler}  >
+        <form className={'flex flex-col gap-2'} onSubmit={e => handler(e)}  >
             <label
                 htmlFor="phoneNumber"
                 className={'font-thin'}
