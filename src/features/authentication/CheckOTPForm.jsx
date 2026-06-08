@@ -1,11 +1,43 @@
 import OTPInput from "react-otp-input";
 import {useState} from "react";
+import {useMutation} from "@tanstack/react-query";
+import {checkOtp} from "../../services/authService.js";
+import toast from "react-hot-toast";
+import {useNavigate} from "react-router-dom";
 
-function CheckOtpForm() {
+function CheckOtpForm({phoneNumber}) {
     const [otp, setOtp] = useState('')
+    const navigate = useNavigate()
+    const {isPending , isSuccess , error ,data , mutateAsync} = useMutation({
+        mutationFn: checkOtp
+    })
+
+    async function checkOtpHandler (e){
+        e.preventDefault();
+        try {
+            const {message ,user , err } = await mutateAsync({
+                phoneNumber,
+                otp
+            })
+            toast.success(message)
+            if (user.isActive){
+                if (user.role === "OWNER") navigate("/owner-projects")
+
+            }else {
+                navigate("/complete-profile")
+            }
+
+        }catch(err){
+            toast.error(err.response.data.message)
+
+        }
+
+    }
+
+
     return (
        <section className={''}>
-           <form action="">
+           <form onSubmit={checkOtpHandler} >
                <p className={'font-thin'}>کد تایید را وارد کنید</p>
                <OTPInput
                    value={otp}
