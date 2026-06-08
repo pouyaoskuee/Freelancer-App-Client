@@ -1,5 +1,6 @@
+import Loading from "./Loading.jsx";
 
-function NumberInput({label, value, onChange , handler}) {
+function NumberInput({label, value, onChange , handler , isLoading , loading}) {
 
 
     return (
@@ -16,10 +17,14 @@ function NumberInput({label, value, onChange , handler}) {
                 className={'w-full numberInput'}
             />
 
-            <button
-                type="submit"
-                className={' w-full btn btn--primary'}
-            >ارسال کد تایید</button>
+            {
+                isLoading ? <Loading/>:
+                    <button
+                    type="submit"
+                    className={' w-full btn btn--primary'}
+                >ارسال کد تایید</button>
+            }
+
         </form>
     );
 }
