@@ -1,21 +1,25 @@
 import OTPInput from "react-otp-input";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useMutation} from "@tanstack/react-query";
 import {checkOtp} from "../../services/authService.js";
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
+import {HiOutlineArrowRightCircle} from "react-icons/hi2";
 
-function CheckOtpForm({phoneNumber}) {
+function CheckOtpForm({phoneNumber ,onBack , otpHandler}) {
+
     const [otp, setOtp] = useState('')
+    const [time, setTime] = useState(5)
     const navigate = useNavigate()
-    const {isPending , isSuccess , error ,data , mutateAsync} = useMutation({
+    const {mutateAsync} = useMutation({
         mutationFn: checkOtp
     })
+
 
     async function checkOtpHandler (e){
         e.preventDefault();
         try {
-            const {message ,user , err } = await mutateAsync({
+            const {message ,user } = await mutateAsync({
                 phoneNumber,
                 otp
             })
@@ -26,19 +30,37 @@ function CheckOtpForm({phoneNumber}) {
             }else {
                 navigate("/complete-profile")
             }
-
         }catch(err){
             toast.error(err.response.data.message)
+        }
+    }
 
+
+    useEffect(() => {
+        const timer = time>0 && setInterval(()=>{
+            setTime((t)=>t-1)
+        },1000)
+
+        return () => {
+            if (timer) clearInterval(timer)
         }
 
-    }
+    }, [time])
+
+
+
 
 
     return (
        <section className={''}>
+           <button onClick={onBack} className={'text-primary-800'}><HiOutlineArrowRightCircle size={30}/></button>
+           <div className={'my-1'}>
+               <p className={'font-thin text-secondary-400 text-sm mb-1'}>کد تایید برای شماره موبایل {phoneNumber} ارسال گردید </p>
+               <div>{time>0?(<p className={'text-secondary-500 text-md'}>{time}ثانیه تا ارسال مجدد کد تایید</p>): (<button onClick={e =>otpHandler(e)} className={'text-primary-700'}>ارسال مجدد کد</button>)}</div>
+           </div>
            <form onSubmit={checkOtpHandler} >
-               <p className={'font-thin'}>کد تایید را وارد کنید</p>
+               <p className={'font-medium text-secondary-600'}>کد تایید را وارد کنید</p>
+               <p></p>
                <OTPInput
                    value={otp}
                    onChange={e => setOtp(e)}
