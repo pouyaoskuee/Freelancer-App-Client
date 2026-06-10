@@ -24,12 +24,14 @@ function CheckOtpForm({phoneNumber ,onBack , otpHandler , time , setTime , isLoa
                 otp
             })
             toast.success(message)
-            if (user.isActive){
-                if (user.role === "OWNER") navigate("/owner-projects")
 
-            }else {
-                navigate("/complete-profile")
+            if(!user.isActive) return navigate("/complete-profile")
+            if (user.status!==2){
+                toast.custom('حساب کاربری شما در انتظار تایید از سمت ادمین قرار گرفت' , {icon:'ℹ️'})
+                return navigate("/")
             }
+            if (user.role === "OWNER") navigate("/owner")
+            if (user.role === "FREELANCER") navigate("/freeLancer")
         }catch(err){
             toast.error(err.response.data.message)
         }
