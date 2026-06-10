@@ -6,10 +6,9 @@ import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 import {HiOutlineArrowRightCircle} from "react-icons/hi2";
 
-function CheckOtpForm({phoneNumber ,onBack , otpHandler}) {
+function CheckOtpForm({phoneNumber ,onBack , otpHandler , time , setTime}) {
 
     const [otp, setOtp] = useState('')
-    const [time, setTime] = useState(5)
     const navigate = useNavigate()
     const {mutateAsync} = useMutation({
         mutationFn: checkOtp
@@ -45,7 +44,7 @@ function CheckOtpForm({phoneNumber ,onBack , otpHandler}) {
             if (timer) clearInterval(timer)
         }
 
-    }, [time])
+    }, [time , setTime])
 
 
 

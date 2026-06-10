@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 function AuthContainer() {
     const [step, setStep] = useState(1)
     const [phoneNumber, setPhoneNumber] = useState('')
+    const [time, setTime] = useState('')
 
 
     const {isPending ,  mutateAsync} =useMutation({
@@ -21,6 +22,7 @@ function AuthContainer() {
                 phoneNumber
             })
             setStep(2)
+            setTime(5)
             toast.success(response.message.status)
         }catch(error){
             // console.log(error.response.data.message)
@@ -40,12 +42,12 @@ function AuthContainer() {
             case 1:
                 return <SendOtpForm setStep={setStep} phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} otpHandler={otpHandler} isLoading={isPending}  />
             case 2:
-                return <CheckOtpForm phoneNumber={phoneNumber} onBack={()=> setStep(s=>s-1)} otpHandler={otpHandler} />
+                return <CheckOtpForm phoneNumber={phoneNumber} onBack={()=> setStep(s=>s-1)} otpHandler={otpHandler} setTime={setTime} time={time} />
         }
     }
 
     return (
-        <main className={'container max-w-[28rem]'}>
+        <main >
             {renderStep()}
         </main>
     );
