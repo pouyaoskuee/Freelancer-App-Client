@@ -10,6 +10,8 @@ function AuthContainer() {
     const [phoneNumber, setPhoneNumber] = useState('')
     const [time, setTime] = useState('')
 
+    console.log(phoneNumber)
+
 
     const {isPending ,  mutateAsync} =useMutation({
         mutationFn: getOtp
@@ -42,7 +44,7 @@ function AuthContainer() {
             case 1:
                 return <SendOtpForm setStep={setStep} phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} otpHandler={otpHandler} isLoading={isPending}  />
             case 2:
-                return <CheckOtpForm phoneNumber={phoneNumber} onBack={()=> setStep(s=>s-1)} otpHandler={otpHandler} setTime={setTime} time={time} />
+                return <CheckOtpForm phoneNumber={phoneNumber} onBack={()=> setStep(s=>s-1)} otpHandler={otpHandler} setTime={setTime} time={time} isLoading={isPending} />
         }
     }
 

@@ -5,8 +5,9 @@ import {checkOtp} from "../../services/authService.js";
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 import {HiOutlineArrowRightCircle} from "react-icons/hi2";
+import ButtonPrimary from "../../ui/ButtonPrimary.jsx";
 
-function CheckOtpForm({phoneNumber ,onBack , otpHandler , time , setTime}) {
+function CheckOtpForm({phoneNumber ,onBack , otpHandler , time , setTime , isLoading}) {
 
     const [otp, setOtp] = useState('')
     const navigate = useNavigate()
@@ -71,8 +72,7 @@ function CheckOtpForm({phoneNumber ,onBack , otpHandler , time , setTime}) {
                    inputStyle={'m-2 border border-primary-400 rounded-sm size-8 text-center'}
                    skipDefaultStyles={true}
                />
-
-               <button className={' w-full btn btn--primary'}>تایید</button>
+               <ButtonPrimary label={'تایید'} isLoading={isLoading}/>
            </form>
        </section>
     );
