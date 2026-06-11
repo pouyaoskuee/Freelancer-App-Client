@@ -1,6 +1,5 @@
-import React from 'react';
 
-function Owner() {
+function Dashboard() {
     return (
         <div>
             owner page
@@ -8,4 +7,4 @@ function Owner() {
     );
 }
 
-export default Owner;
+export default Dashboard;
