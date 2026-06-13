@@ -1,5 +1,5 @@
 import http from "./httpService.js";
 
-export  function getProjectsApi() {
-    http.get('/project/owner-projects').then(({data})=> data.data)
+export function getProjectsApi() {
+   return http.get('/project/owner-projects').then(({data})=> data.data)
 }
