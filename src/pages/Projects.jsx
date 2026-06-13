@@ -1,7 +1,8 @@
+import ProjectTable from "../features/projects/ProjectTable.jsx";
 
 function Projects() {
     return (
-        <div>its projects</div>
+        <div className={'bg-secondary-100'}><ProjectTable/></div>
     );
 }
 
