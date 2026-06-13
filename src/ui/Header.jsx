@@ -4,7 +4,7 @@ function Header() {
     const {data} =useUser()
     console.log(data)
     return (
-        <div className={'bg-red-100 '}>
+        <div className={'border-r-2 border-secondary-100'}>
             its Header
         </div>
     );
