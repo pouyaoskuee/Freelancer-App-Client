@@ -64,6 +64,10 @@
     .numberInput{
         @apply  border border-gray-200 bg-gray-100 text-secondary-900 rounded-lg p-1 hover:border-primary-500 focus:outline-none focus:bg-white focus:border-primary-500 focus:shadow-lg focus:shadow-primary-200
     }
+
+    .budge--secondary{
+        @apply bg-secondary-400/40 px-1.5 py-0.5 rounded-2xl text-secondary-700
+    }
 }
 
 
@@ -96,5 +100,33 @@ button:disabled {
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
     display: none;
 }
+
+
+.project-table table{
+    width: 100%;
+}
+
+.project-table thead th{
+    text-align: start;
+
+}
+
+.project-table tbody{
+    background-color: var(--color-backgrund);
+
+}
+
+.project-table tr{
+    border: 2px solid var(--color-secondary-100);
+
+}
+
+.project-table td , .project-table th {
+    padding: 0.5rem 1rem;
+
+}
+
+
+
 
 
