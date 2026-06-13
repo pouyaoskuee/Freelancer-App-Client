@@ -16,7 +16,7 @@ function App() {
   return (
       <QueryClientProvider client={queryClient}>
           <Toaster/>
-          <div className={'container'}>
+          <div className={''}>
               <Routes>
                   <Route path="/" element={<Home/>} />
                   <Route path="*" element={<NotFound />} />
