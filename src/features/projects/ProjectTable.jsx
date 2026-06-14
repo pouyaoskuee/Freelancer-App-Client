@@ -15,11 +15,11 @@ function ProjectTable() {
     if (isPending) return <Loading />
     if (projects.length < 1) return <Empty resourceName={'پرژه'}/>
     return (
-        <div className="project-table">
-            <table>
+        <div>
+            <table className={'w-full'}>
             <Modal open={openEdit} title={'edit your project'} children={'Edit project informationEdit project informationEdit project informationEdit project information'} onClose={() => setOpenEdit(false)} />
                 <thead>
-                <tr>
+                <tr className={'*:text-start *:px-4 *:py-2'}>
                     <th>#</th>
                     <th>عنوان پرژه</th>
                     <th>دسته بندی</th>
@@ -31,9 +31,9 @@ function ProjectTable() {
                     <th>عملیات</th>
                 </tr>
                 </thead>
-                <tbody className={''}>
+                <tbody className={'bg-secondary-0 *:border-2 *:border-secondary-100'}>
                 {projects.map((project , index) => (
-                    <tr key={project.id}>
+                    <tr className={'*:px-4 *:py-2'} key={project.id}>
                         <td>{index+1}</td>
                         <td>{truncateText(project.title , 30)}</td>
                         <td>{project.category.title}</td>
