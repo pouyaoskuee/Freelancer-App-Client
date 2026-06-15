@@ -50,15 +50,19 @@
 
 @layer components {
     .btn{
-        @apply py-1 px-2 rounded-lg transition-all duration-300
+        @apply py-1 px-2 rounded-lg transition-all duration-300 shadow-lg
     }
 
     .btn--primary{
-        @apply text-secondary-50 bg-primary-900 hover:bg-primary-800 shadow-lg shadow-primary-300
+        @apply text-secondary-50 bg-primary-900 shadow-primary-300 hover:bg-primary-800
     }
 
     .btn--secondary{
-        @apply text-secondary-100 bg-secondary-300 hover:bg-secondary-200 shadow-lg shadow-secondary-300
+        @apply text-secondary-100 bg-secondary-300 shadow-secondary-300 hover:bg-secondary-200
+    }
+
+    .btn--danger{
+        @apply text-error border border-error
     }
 
     .numberInput{
