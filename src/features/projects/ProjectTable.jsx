@@ -9,11 +9,14 @@ import {HiOutlineTrash} from "react-icons/hi";
 import Modal from "../../ui/Modal.jsx";
 import {useState} from "react";
 import ConfirmDelete from "../../ui/ConfirmDelete.jsx";
+import {useRemoveProject} from "./useRemoveProject.js";
 
 function ProjectTable() {
     const {projects, isPending} = useOwnerProjects()
     const [openEdit, setOpenEdit] = useState(false);
     const [openRemove, setOpenRemove] = useState(false);
+    const {isPending:removePending , mutate} = useRemoveProject()
+
     if (isPending) return <Loading/>
     if (projects.length < 1) return <Empty resourceName={'پرژه'}/>
     return (
@@ -34,7 +37,7 @@ function ProjectTable() {
                 </thead>
                 <tbody className={'bg-secondary-0 *:border-2 *:border-secondary-100'}>
                 {projects.map((project, index) => (
-                    <tr className={'*:px-4 *:py-2'} key={project.id}>
+                    <tr className={'*:px-4 *:py-2'} key={project._id}>
                         <td>{index + 1}</td>
                         <td>{truncateText(project.title, 30)}</td>
                         <td>{project.category.title}</td>
@@ -76,11 +79,11 @@ function ProjectTable() {
                                     title={`حذف پرژه: ${project.title}`}
                                     onClose={() => setOpenRemove(false)}
                                 ><ConfirmDelete
-                                    disabled={() => {
-                                    }}
-                                    onConfirm={() => {}}
+                                    disabled={removePending}
+                                    onConfirm={() => mutate(project._id)}
                                     resourceName={project.title}
                                     onClose={() => setOpenRemove(false)}
+
                                 />
                                 </Modal>
                             </div>
