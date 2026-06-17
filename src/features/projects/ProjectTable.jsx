@@ -16,6 +16,8 @@ function ProjectTable() {
     const [openEdit, setOpenEdit] = useState(false);
     const [openRemove, setOpenRemove] = useState(false);
     const {isPending:removePending , mutate} = useRemoveProject()
+    const [projectId, setProjectId] = useState()
+
 
     if (isPending) return <Loading/>
     if (projects.length < 1) return <Empty resourceName={'پرژه'}/>
@@ -32,6 +34,7 @@ function ProjectTable() {
                     <th>تگ ها</th>
                     <th>فریلنسر</th>
                     <th>وضعیت</th>
+                    <th>عملیات</th>
                     <th>عملیات</th>
                 </tr>
                 </thead>
@@ -61,7 +64,10 @@ function ProjectTable() {
                             </button>
 
                             <button
-                                onClick={() => setOpenRemove(true)}
+                                onClick={() => {
+                                    setOpenRemove(true)
+                                    setProjectId(project._id)
+                                } }
                             ><HiOutlineTrash
                                 className={'size-5 text-error'}
                             />
@@ -80,10 +86,10 @@ function ProjectTable() {
                                     onClose={() => setOpenRemove(false)}
                                 ><ConfirmDelete
                                     disabled={removePending}
-                                    onConfirm={() => mutate(project._id)}
+                                    onConfirm={() =>mutate(projectId)}
+                                    projectId={project._id}
                                     resourceName={project.title}
                                     onClose={() => setOpenRemove(false)}
-
                                 />
                                 </Modal>
                             </div>
