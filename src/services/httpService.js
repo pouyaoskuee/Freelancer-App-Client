@@ -19,8 +19,6 @@ app.interceptors.response.use(
             originalConfig._retry = true;
             try {
                 const {data} = await axios.get(`${BASE_URL}/user/refresh-token`, {withCredentials: true})
-                console.log(data)
-                console.log('hello')
                 if (data) return app(originalConfig)
 
 
@@ -28,6 +26,7 @@ app.interceptors.response.use(
                 return Promise.reject(error)
             }
         }
+        return Promise.reject(error);
     }
 )
 
