@@ -10,11 +10,13 @@ import Modal from "../../ui/Modal.jsx";
 import {useState} from "react";
 import ConfirmDelete from "../../ui/ConfirmDelete.jsx";
 import {useRemoveProject} from "./useRemoveProject.js";
+import CreateProject from "./CreateProject.jsx";
 
 function ProjectTable() {
     const {projects, isPending} = useOwnerProjects()
     const [openEdit, setOpenEdit] = useState(false);
     const [openRemove, setOpenRemove] = useState(false);
+    const [openCreate, setOpenCreate] = useState(false);
     const {isPending:removePending , mutate} = useRemoveProject()
     const [projectId, setProjectId] = useState()
 
@@ -22,12 +24,13 @@ function ProjectTable() {
     if (isPending) return <Loading/>
     if (projects.length < 1) return <Empty resourceName={'پرژه'}/>
     return (
-        <div className={'overflow-auto'}>
-            <div>
-                <h2>پروژه های شما</h2>
-                <button></button>
+        <div className={'overflow-auto '}>
+            <div className={'flex justify-between items-center mb-8'}>
+                <h2 className={'font-normal text-lg'}>پروژه های شما</h2>
+                <button className={'btn btn--primary'} onClick={()=>setOpenCreate(true)}>ایجاد پرژه جدید</button>
+                <Modal open={openCreate} onClose={()=>setOpenCreate(false)} title={'ایجاد پرژه جدید'} children={<CreateProject/>}></Modal>
             </div>
-            <table className={''}>
+            <table className={'w-full'}>
                 <thead>
                 <tr className={'*:text-start *:px-4 *:py-2'}>
                     <th>#</th>
@@ -51,7 +54,8 @@ function ProjectTable() {
                         <td>{toLocalDateShort(project.deadline)}</td>
                         <td>
                             <div
-                                className={'flex flex-wrap max-w-[200px] gap-x-4 gap-y-1 '}>{project.tags.map((tag, index) => (
+                                className={'flex flex-wrap max-w-[200px] gap-x-4 gap-y-1 '}>
+                                {project.tags.map((tag, index) => (
                                 <span className={'budge budge--secondary'} key={index}>{tag}</span>))}
                             </div>
                         </td>
@@ -104,7 +108,6 @@ function ProjectTable() {
                 ))}
                 </tbody>
             </table>
-
         </div>
     )
 }
