@@ -4,18 +4,20 @@ import toast from "react-hot-toast";
 
 export function useRemoveProject() {
     const queryClient = useQueryClient()
-    const {mutate , isPending} = useMutation({
-        mutationKey: 'remove-project',
+    const {mutate , isPending } = useMutation({
+        mutationKey: ['remove-project'],
         mutationFn: removeProjectsApi,
-        onSuccess: ()=>{
-            toast.success('با موفقیت حذف شد')
+        onSuccess: (data)=>{
+            toast.success(data.message)
             queryClient.invalidateQueries({
                 queryKey: ['owner-projects'],
             })
         },
-        onError: error => toast.error(error.message)
-    })
+        onError: (error) => {
+            toast.error(error?.response?.data?.data?.message)
+        }
 
+    })
     return {mutate , isPending}
 
 
