@@ -22,8 +22,12 @@ function ProjectTable() {
     if (isPending) return <Loading/>
     if (projects.length < 1) return <Empty resourceName={'پرژه'}/>
     return (
-        <div>
-            <table className={'w-full'}>
+        <div className={'overflow-auto'}>
+            <div>
+                <h2>پروژه های شما</h2>
+                <button></button>
+            </div>
+            <table className={''}>
                 <thead>
                 <tr className={'*:text-start *:px-4 *:py-2'}>
                     <th>#</th>
@@ -34,7 +38,6 @@ function ProjectTable() {
                     <th>تگ ها</th>
                     <th>فریلنسر</th>
                     <th>وضعیت</th>
-                    <th>عملیات</th>
                     <th>عملیات</th>
                 </tr>
                 </thead>
@@ -86,8 +89,10 @@ function ProjectTable() {
                                     onClose={() => setOpenRemove(false)}
                                 ><ConfirmDelete
                                     disabled={removePending}
-                                    onConfirm={() =>mutate(projectId)}
-                                    projectId={project._id}
+                                    onConfirm={() => {
+                                        mutate(projectId)
+                                        setOpenRemove(false)
+                                    } }
                                     resourceName={project.title}
                                     onClose={() => setOpenRemove(false)}
                                 />
