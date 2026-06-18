@@ -6,45 +6,55 @@ import {useMutation} from "@tanstack/react-query";
 import {completeProfile} from "../../services/authService.js";
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
+import {useForm} from "react-hook-form";
 
 function CompleteProfileForm() {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [role, setRole] = useState()
     const navigate = useNavigate()
+    const {register, handleSubmit, formState: {errors}} = useForm()
 
-    const {mutateAsync , isPending} = useMutation({
+    const {mutateAsync, isPending} = useMutation({
         mutationFn: completeProfile,
     })
 
-    async function handleCompleteProfile (e) {
-        e.preventDefault();
+    async function handleCompleteProfile({name, email, role}) {
         try {
-            const {message , user } = await mutateAsync({
+            const {message, user} = await mutateAsync({
                 name,
                 email,
                 role
             })
-            if (user.status!==2){
-                toast.custom('حساب کاربری شما در انتظار تایید از سمت ادمین قرار گرفت' , {icon:'ℹ️'})
+            if (user.status !== 2) {
+                toast.custom('حساب کاربری شما در انتظار تایید از سمت ادمین قرار گرفت', {icon: 'ℹ️'})
                 return navigate("/")
             }
             toast.success(message)
-        }catch(error){
+        } catch (error) {
             toast.error(error.response.data.message)
         }
     }
 
 
-
     return (
         <div>
-            <form className={'space-y-2'} onSubmit={(e)=>handleCompleteProfile(e)}>
-                <Input label={'نام و نام خانوادگی'} type={'text'} id={'name'} value={name} onChange={e=> setName(e.target.value)}/>
-                <Input label={'ایمیل'} type={'email'} id={'email'} value={email} onChange={e=> setEmail(e.target.value)}/>
+            <form className={'space-y-2'} onSubmit={handleSubmit(handleCompleteProfile)}>
+                <Input label={'نام و نام خانوادگی'} type={'text'} id={'name'} register={register} errors={errors}
+                       validationSchema={{
+                           required: 'این فیلد اجباری است',
+                           minLength: {value: 5, message: 'نام و نام خانوادگی معتبر نیست'}
+                       }}/>
+                <Input label={'ایمیل'} type={'email'} id={'email'} register={register} errors={errors}
+                       validationSchema={{
+                           required: "ایمیل ضروری است",
+                           pattern: {
+                               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                               message: "ایمیل نامعتبر است",
+                           },
+                       }}/>
                 <div className={'flex gap-4'}>
-                    <RadioInput label={'کارفرما'} id={'OWNER'} name={'role'} value={'OWNER'} onChange={e=> setRole(e.target.value)} />
-                    <RadioInput label={'فریلنسر'} id={'FREELANCER'} name={'role'} value={'FREELANCER'} onChange={e=> setRole(e.target.value)} />
+                    <RadioInput label={'کارفرما'} id={'OWNER'} name={'role'} value={'OWNER'} register={register}
+                                errors={errors} validationSchema={{required: 'این فیلد اجباری است'}}/>
+                    <RadioInput label={'فریلنسر'} id={'FREELANCER'} name={'role'} value={'FREELANCER'}
+                                register={register}/>
                 </div>
                 <ButtonPrimary label={'تکمیل پروفایل'} isLoading={isPending}/>
             </form>

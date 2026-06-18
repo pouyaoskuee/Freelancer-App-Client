@@ -1,8 +1,9 @@
 import Input from "../../ui/Input.jsx";
 import {useForm} from "react-hook-form";
+import Select from "../../ui/Select.jsx";
 
 function CreateProject() {
-    const {handleSubmit , register , formState:{errors}} =useForm()
+    const {handleSubmit, register, formState: {errors}} = useForm()
 
     function onSubmit(data) {
         console.log(data)
@@ -18,10 +19,9 @@ function CreateProject() {
                 errors={errors}
                 required={true}
                 validationSchema={{
-                    required:'عنوان پروژه اجباری است',
-                    minLength: { value: 5 , message:'طول عنوان پرژه نا معتبر است'},
-                }}
-            />
+                    required: 'عنوان پروژه اجباری است',
+                    minLength: {value: 5, message: 'طول عنوان پرژه نا معتبر است'},
+                }}/>
             <Input
                 label={'توضیحات'}
                 id={'description'}
@@ -30,10 +30,25 @@ function CreateProject() {
                 errors={errors}
                 required={true}
                 validationSchema={{
-                    required:'عنوان پروژه اجباری است',
-                    minLength: { value: 5 , message:'طول عنوان پرژه نا معتبر است'},
-                }}
-            />
+                    required: 'توضیحات پروژه اجباری است',
+                    minLength: {value: 5, message: 'طول توضیحات پرژه نا معتبر است'},
+                }}/>
+            <Input label={'بودجه'}
+                   type={'number'}
+                   id={'number'}
+                   register={register}
+                   errors={errors}
+                   required={true}
+                   validationSchema={{
+                       required: "بودجه ضروری است",
+                       minLength: {
+                           value: 6,
+                           message: "بودجه نامعتبر است",
+                       },
+                   }}/>
+
+            <Select id={'category'} register={register} options={[]}/>
+
             <button type={"submit"} className={'btn btn--primary'}>تایید</button>
         </form>
     );

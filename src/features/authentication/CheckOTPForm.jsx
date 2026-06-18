@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 import {HiOutlineArrowRightCircle} from "react-icons/hi2";
 import ButtonPrimary from "../../ui/ButtonPrimary.jsx";
 
-function CheckOtpForm({phoneNumber ,onBack , otpHandler , time , setTime , isLoading}) {
+function CheckOtpForm({phoneNumber ,onBack , handleSubmit , time , setTime , isLoading}) {
 
     const [otp, setOtp] = useState('')
     const navigate = useNavigate()
@@ -58,7 +58,7 @@ function CheckOtpForm({phoneNumber ,onBack , otpHandler , time , setTime , isLoa
            <button onClick={onBack} className={'text-primary-800'}><HiOutlineArrowRightCircle size={30}/></button>
            <div className={'my-1'}>
                <p className={'font-thin text-secondary-400 text-sm mb-1'}>کد تایید برای شماره موبایل {phoneNumber} ارسال گردید </p>
-               <div>{time>0?(<p className={'text-secondary-500 text-md'}>{time}ثانیه تا ارسال مجدد کد تایید</p>): (<button onClick={e =>otpHandler(e)} className={'text-primary-700'}>ارسال مجدد کد</button>)}</div>
+               <div>{time>0?(<p className={'text-secondary-500 text-md'}>{time}ثانیه تا ارسال مجدد کد تایید</p>): (<button onClick={handleSubmit} className={'text-primary-700'}>ارسال مجدد کد</button>)}</div>
            </div>
            <form onSubmit={checkOtpHandler} >
                <p className={'font-medium text-secondary-600'}>کد تایید را وارد کنید</p>
