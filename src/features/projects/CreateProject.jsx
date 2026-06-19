@@ -1,8 +1,13 @@
 import Input from "../../ui/Input.jsx";
 import {useForm} from "react-hook-form";
 import Select from "../../ui/Select.jsx";
+import {TagsInput} from "react-tag-input-component";
+import {useState} from "react";
+import DatePickerField from "../../ui/DatePickerField.jsx";
 
 function CreateProject() {
+    const [tag, setTag] = useState()
+    const [date, setDate] = useState()
     const {handleSubmit, register, formState: {errors}} = useForm()
 
     function onSubmit(data) {
@@ -48,6 +53,12 @@ function CreateProject() {
                    }}/>
 
             <Select id={'category'} register={register} options={[]}/>
+            <div>
+                <label htmlFor="">تگ ها</label>
+                <TagsInput value={tag} onChange={setTag} name={'tag'} />
+            </div>
+    
+            <DatePickerField date={date} setDate={setDate} label="ددلاین" />
 
             <button type={"submit"} className={'btn btn--primary'}>تایید</button>
         </form>

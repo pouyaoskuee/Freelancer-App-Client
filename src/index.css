@@ -46,6 +46,7 @@
     --color-red-300: rgb(252, 165, 165);
     --color-white: rgb(255, 255, 255) ;
 
+
 }
 
 @layer components {
@@ -85,8 +86,13 @@
 }
 
 
-/**************************   resets & configs   **************************/
 
+
+
+
+
+
+/**************************   resets & configs   **************************/
 html{
     scroll-behavior: smooth;
 
@@ -114,6 +120,29 @@ button:disabled {
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
     display: none;
 }
+
+
+
+
+/************************** react-tag-input **************************/
+.rti--container {
+    border: 1px solid var(--color-secondary-200)!important;
+    border-radius: var(--radius-2xl)!important;
+    padding: 0.5rem!important;
+    --rti-main: none!important;
+}
+
+.rti--container:hover {
+    border-color: var(--color-primary-500)!important ;
+
+}.rti--container:focus-within {
+     border-color: var(--color-primary-500)!important ;
+     box-shadow: 0 4px 15px -3px var(--color-primary-400), 0 4px 6px -4px var(--color-primary-400)!important ;
+
+}
+
+
+
 
 
 
