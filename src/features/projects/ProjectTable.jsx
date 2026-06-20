@@ -28,7 +28,7 @@ function ProjectTable() {
             <div className={'flex justify-between items-center mb-8'}>
                 <h2 className={'font-normal text-lg'}>پروژه های شما</h2>
                 <button className={'btn btn--primary'} onClick={()=>setOpenCreate(true)}>ایجاد پرژه جدید</button>
-                <Modal open={openCreate} onClose={()=>setOpenCreate(false)} title={'ایجاد پرژه جدید'} children={<CreateProject/>}></Modal>
+                <Modal open={openCreate} onClose={()=>setOpenCreate(false)} title={'ایجاد پرژه جدید'} children={<CreateProject onClose={()=>setOpenCreate(false)}/>}></Modal>
             </div>
             <table className={'w-full'}>
                 <thead>

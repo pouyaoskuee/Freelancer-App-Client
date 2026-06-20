@@ -7,3 +7,8 @@ export function getProjectsApi() {
 export function removeProjectsApi(projectId) {
     return http.delete(`/project/${projectId}`).then(({data})=> data.data)
 }
+
+export function addProjectApi(project) {
+    console.log(project)
+    return http.post(`/project/add`, project).then(({data})=> data.data)
+}
