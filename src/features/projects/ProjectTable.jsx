@@ -5,20 +5,21 @@ import {truncateText} from "../../utils/truncateText.js";
 import {toLocalDateShort} from "../../utils/toLocalDateShort.js";
 import {toPersianNumbersWithComma} from "../../utils/toPersianNumber.js";
 import {TbPencilMinus} from "react-icons/tb";
-import {HiOutlineTrash} from "react-icons/hi";
+import {HiEye, HiOutlineTrash} from "react-icons/hi";
 import Modal from "../../ui/Modal.jsx";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import ConfirmDelete from "../../ui/ConfirmDelete.jsx";
 import {useRemoveProject} from "./useRemoveProject.js";
 import CreateProject from "./CreateProject.jsx";
 import ToggleProjectStatus from "./ToggleProjectStatus.jsx";
+import {Link} from "react-router-dom";
 
 function ProjectTable() {
     const {projects, isPending} = useOwnerProjects()
     const [openCreate, setOpenCreate] = useState(false);
 
     if (isPending) return <Loading/>
-    if (projects.length < 1) return <Empty resourceName={'پرژه'}/>
+    if (projects.length < 1) return <Empty resourceName={'پروژه'}/>
     return (
         <div className={'overflow-auto '}>
             <div className={'flex justify-between items-center mb-8'}>
@@ -28,7 +29,7 @@ function ProjectTable() {
             </div>
             <table className={'w-full'}>
                 <thead>
-                <tr className={'*:text-start *:px-4 *:py-2'}>
+                <tr className={'*:text-start *:px-4 *:py-2 *:text-nowrap'}>
                     <th>#</th>
                     <th>عنوان پرژه</th>
                     <th>دسته بندی</th>
@@ -38,6 +39,7 @@ function ProjectTable() {
                     <th>فریلنسر</th>
                     <th>وضعیت</th>
                     <th>عملیات</th>
+                    <th>درخواست ها</th>
                 </tr>
                 </thead>
                 <tbody className={'bg-secondary-0 *:border-2 *:border-secondary-100'}>
@@ -114,6 +116,11 @@ function TableRow({project , index}){
                     />
                     </Modal>
                 </div>
+            </td>
+            <td className={''}>
+                <Link className={'flex justify-center'} to={project._id}>
+                    <HiEye className={'text-primary-900 size-5'}/>
+                </Link>
             </td>
         </tr>
     )
