@@ -26,7 +26,7 @@ function App() {
                       <Route index element={<Navigate to={'dashboard'} replace={true} />} />
                       <Route path="dashboard" element={<Dashboard/>} />
                       <Route path="projects" element={<Projects/>} />
-                      <Route path="projects:id" element={<Project/>} />
+                      <Route path="projects/:id" element={<Project/>} />
                   </Route>
               </Routes>
           </div>
