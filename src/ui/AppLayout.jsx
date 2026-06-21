@@ -7,7 +7,9 @@ function AppLayout() {
         <div className={' grid grid-cols-[10rem_minmax(10rem,1fr)] grid-rows-[5rem_1fr] *:p-4 '}>
             <Header/>
             <SideBar/>
-            <Outlet/>
+            <div className={'bg-secondary-100 h-full'}>
+                <Outlet/>
+            </div>
         </div>
     );
 }
