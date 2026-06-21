@@ -9,6 +9,10 @@ export function removeProjectsApi(projectId) {
 }
 
 export function addProjectApi(project) {
-    console.log(project)
     return http.post(`/project/add`, project).then(({data})=> data.data)
+}
+
+export function editProjectApi({_id , newProject}) {
+    console.log(_id)
+    return http.patch(`/project/update/${_id}`, newProject).then(({data})=> data.data)
 }
