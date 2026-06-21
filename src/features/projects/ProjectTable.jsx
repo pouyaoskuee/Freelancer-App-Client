@@ -11,6 +11,7 @@ import {useEffect, useState} from "react";
 import ConfirmDelete from "../../ui/ConfirmDelete.jsx";
 import {useRemoveProject} from "./useRemoveProject.js";
 import CreateProject from "./CreateProject.jsx";
+import ToggleProjectStatus from "./ToggleProjectStatus.jsx";
 
 function ProjectTable() {
     const {projects, isPending} = useOwnerProjects()
@@ -70,8 +71,9 @@ function TableRow({project , index}){
                 </div>
             </td>
             <td>{project.freelancer?.name}</td>
-            <td>{project.status === 'OPEN' ? <p className={' budge budge--success text-center'}>باز</p> :
-                <p className={' budge budge--error text-center'}>بسته</p>}</td>
+            <td>
+                <ToggleProjectStatus project={project} label={''}/>
+            </td>
             <td className={' space-x-2 text-nowrap'}>
                 <button
                     onClick={() => setOpenEdit(true)}

@@ -13,6 +13,9 @@ export function addProjectApi(project) {
 }
 
 export function editProjectApi({_id , newProject}) {
-    console.log(_id)
     return http.patch(`/project/update/${_id}`, newProject).then(({data})=> data.data)
+}
+
+export function toggleProjectStatusApi({status, _id}) {
+    return http.patch(`/project/${_id}`, status).then(({data})=> data.data)
 }
