@@ -1,7 +1,6 @@
 
 function Select({id, options, register , validationSchema , errors , isPending}) {
 
-    console.log(isPending)
     if (!isPending) return (
         <div>
             <label htmlFor={id}>دسته بندی</label>
