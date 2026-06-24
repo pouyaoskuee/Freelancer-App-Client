@@ -7,8 +7,8 @@ function OwnerLayout() {
         <AppLayout>
             <aside className={'bg-secondary-0 row-span-full h-screen '} >
                 <ul className={'space-y-1 '}>
-                    <li><CustomNavLink to={'/owner/dashboard'}><HiHome/> خانه</CustomNavLink></li>
-                    <li><CustomNavLink to={'/owner/projects'}><HiCollection/> پروژه ها</CustomNavLink></li>
+                    <li><CustomNavLink to={'dashboard'}><HiHome/> خانه</CustomNavLink></li>
+                    <li><CustomNavLink to={'projects'}><HiCollection/> پروژه ها</CustomNavLink></li>
                 </ul>
             </aside>
         </AppLayout>
