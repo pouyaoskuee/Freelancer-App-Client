@@ -6,11 +6,15 @@ import CompleteProfile from "./pages/CompleteProfile.jsx";
 import Home from "./pages/Home.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import AppLayout from "./ui/AppLayout.jsx";
-import Dashboard from "./pages/dashboard.jsx";
+import OwnerDashboard from "./pages/OwnerDashboard.jsx";
 import Projects from "./pages/Projects.jsx";
 import Project from "./pages/Project.jsx";
 import {DarkModeProvider} from "./context/DarkMode.jsx";
 import OwnerLayout from "./features/owner/OwnerLayout.jsx";
+import FreelancerLayout from "./features/freelancer/FreelancerLayout.jsx";
+import SubmittedProjects from "./features/freelancer/SubmittedProjects.jsx";
+import Proposals from "./features/freelancer/Proposals.jsx";
+import FreelancerDashboard from "./pages/FreelancerDashboard.jsx";
 
 const queryClient = new QueryClient()
 function App() {
@@ -27,9 +31,15 @@ function App() {
                       <Route path="/complete-profile" element={<CompleteProfile/>} />
                       <Route path="/owner" element={<OwnerLayout />}>
                           <Route index element={<Navigate to={'dashboard'} replace={true} />} />
-                          <Route path="dashboard" element={<Dashboard/>} />
+                          <Route path="dashboard" element={<OwnerDashboard/>} />
                           <Route path="projects" element={<Projects/>} />
                           <Route path="projects/:id" element={<Project/>} />
+                      </Route>
+                      <Route path="/freelancer" element={<FreelancerLayout/>}>
+                          <Route index element={<Navigate to={'dashboard'} replace={true} />} />
+                          <Route path="dashboard" element={<FreelancerDashboard/>} />
+                          <Route path="projects" element={<SubmittedProjects/>} />
+                          <Route path="proposals" element={<Proposals/>} />
                       </Route>
                   </Routes>
               </div>
