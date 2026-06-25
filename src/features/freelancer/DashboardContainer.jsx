@@ -1,15 +1,15 @@
 import DashboardHeader from "./DashboardHeader.jsx";
 import DashboardStats from "./DashboardStats.jsx";
-import useOwnerProjects from "../projects/useOwnerProjects.js";
 import Loading from "../../ui/Loading.jsx";
+import {useProposals} from "../proposlals/useProposals.js";
 
 function DashboardContainer() {
-    const {isPending , projects} = useOwnerProjects()
+    const {isPending , proposals} = useProposals()
     if (isPending) return <Loading />
     return (
         <div>
             <DashboardHeader/>
-            <DashboardStats projects={projects}/>
+            <DashboardStats proposals={proposals}/>
         </div>
     );
 }

@@ -1,5 +1,8 @@
+import {toPersianNumbers, toPersianNumbersWithComma} from "../../utils/toPersianNumber.js";
 
 function StatBox({icon,label, count , color}) {
+
+    console.log(count)
 
     const styleColor = {
         primary: 'bg-primary-300 text-primary-700',
@@ -17,7 +20,7 @@ function StatBox({icon,label, count , color}) {
                 {label}
             </div>
             <div className={'sm:mx-1'}>
-                {count}
+                {toPersianNumbersWithComma(count)}
             </div>
         </div>
     );

@@ -5,7 +5,6 @@ import {Toaster} from "react-hot-toast";
 import CompleteProfile from "./pages/CompleteProfile.jsx";
 import Home from "./pages/Home.jsx";
 import NotFound from "./pages/NotFound.jsx";
-import AppLayout from "./ui/AppLayout.jsx";
 import OwnerDashboard from "./pages/OwnerDashboard.jsx";
 import Projects from "./pages/Projects.jsx";
 import Project from "./pages/Project.jsx";

@@ -5,7 +5,7 @@ import {HiCurrencyDollar} from "react-icons/hi2";
 function DashboardStats({projects}) {
 
     const numOfProjects = projects.length
-    const numOfAcceptedProjects = projects.map(project => project.status ===2).length
+    const numOfAcceptedProjects = projects.filter(project => project.status ===2).length
     const nomOfProposals = projects.reduce((acc , curr)=> acc + curr.proposals.length , 0)
 
     return (
