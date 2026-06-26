@@ -12,7 +12,7 @@ import {DarkModeProvider} from "./context/DarkMode.jsx";
 import OwnerLayout from "./features/owner/OwnerLayout.jsx";
 import FreelancerLayout from "./features/freelancer/FreelancerLayout.jsx";
 import SubmittedProjects from "./features/freelancer/SubmittedProjects.jsx";
-import Proposals from "./features/freelancer/Proposals.jsx";
+import Proposals from "./pages/Proposals.jsx";
 import FreelancerDashboard from "./pages/FreelancerDashboard.jsx";
 
 const queryClient = new QueryClient()
@@ -37,8 +37,8 @@ function App() {
                       <Route path="/freelancer" element={<FreelancerLayout/>}>
                           <Route index element={<Navigate to={'dashboard'} replace={true} />} />
                           <Route path="dashboard" element={<FreelancerDashboard/>} />
-                          <Route path="projects" element={<SubmittedProjects/>} />
                           <Route path="proposals" element={<Proposals/>} />
+                          <Route path="projects" element={<SubmittedProjects/>} />
                       </Route>
                   </Routes>
               </div>

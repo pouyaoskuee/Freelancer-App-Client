@@ -3,8 +3,9 @@ import {truncateText} from "../../utils/truncateText.js";
 import {useState} from "react";
 import Modal from "../../ui/Modal.jsx";
 import SingleProposal from "./singleProposal.jsx";
+import Loading from "../../ui/Loading.jsx";
 
-function ProposalsTable({proposals}) {
+function ProposalsTable({proposals , isPending , role}) {
 
     const [openProposal, setOpenProposal] = useState(false)
     const [proposalId, setProposalId] = useState()
@@ -23,7 +24,8 @@ function ProposalsTable({proposals}) {
             className:'budge--success'
         },
     ]
-    if (!proposals.length) return <Empty resourceName={'درخواستی برای پرژه '}/>
+    if (!proposals?.length) return <Empty resourceName={'درخواستی برای پرژه '}/>
+    if (isPending) return <Loading/>
 
     return (
         <>
