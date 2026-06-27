@@ -16,6 +16,13 @@ export function useCategories() {
         }
     })
 
-    return {categories , isPending}
+    const transformedCategory = rowCategories.map(category => {
+        return {
+            label: category.title,
+            value: category.englishTitle,
+        }
+    })
+
+    return {categories , isPending , transformedCategory}
 }
 
