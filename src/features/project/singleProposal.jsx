@@ -3,11 +3,13 @@ import {useForm} from "react-hook-form";
 import ButtonPrimary from "../../ui/ButtonPrimary.jsx";
 import {useChangeProposalStatus} from "./useChangeProposalStatus.js";
 import {useQueryClient} from "@tanstack/react-query";
+import {useParams} from "react-router-dom";
 
-function SingleProposal({id , onClose}) {
+function SingleProposal({proposalId , onClose}) {
     const {register , handleSubmit } = useForm()
     const {mutate , isPending} = useChangeProposalStatus()
     const queryClient = useQueryClient();
+    const {id:projectId} = useParams()
 
     const options = [
         {
@@ -25,8 +27,8 @@ function SingleProposal({id , onClose}) {
     ]
 
     function onSubmit(status) {
-        mutate({id ,status} , {
-            onSuccess: res => {
+        mutate({ proposalId ,projectId ,...status} , {
+            onSuccess: () => {
                 queryClient.invalidateQueries({queryKey:['owner-project']})
                 onClose()
             }

@@ -30,7 +30,7 @@ function ProposalsTable({proposals , isPending , role = 'owner'}) {
 
     return (
         <>
-            <Modal title={`جزعیات پیشنهاد شماره ${''}`} open={openProposal} onClose={()=>setOpenProposal(false)}><SingleProposal id={proposalId} onClose={()=>setOpenProposal(false)}/></Modal>
+            <Modal title={`جزعیات پیشنهاد شماره ${''}`} open={openProposal} onClose={()=>setOpenProposal(false)}><SingleProposal proposalId={proposalId} onClose={()=>setOpenProposal(false)}/></Modal>
             <table className={'w-full'}>
                 <thead>
                 <tr className={'*:text-start *:px-4 *:py-2 *:text-nowrap'}>
