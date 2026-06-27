@@ -81,7 +81,7 @@
 
 @layer components {
     .btn{
-        @apply py-1 px-2 rounded-lg transition-all duration-300 shadow-lg
+        @apply text-lg py-1 px-2 rounded-xl transition-all duration-300 shadow-lg
     }
 
     .btn--primary{
