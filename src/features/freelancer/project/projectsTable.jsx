@@ -47,11 +47,11 @@ function TableRow({project , index}) {
 
     const statusStyle = {
     CLOSED:{
-        label:'در شده',
+        label:'بسته',
         className: 'budge--error'
     },
     OPEN:{
-        label:'تایید شده',
+        label:'باز',
         className: 'budge--success'
     }
 }
