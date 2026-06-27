@@ -1,8 +1,11 @@
+import ProjectsHeader from "./project/projectsHeader.jsx";
+import ProjectsTable from "./project/projectsTable.jsx";
 
 function SubmittedProjects() {
     return (
-        <div>
-            submittedProjects
+        <div className={'overflow-auto '}>
+            <ProjectsHeader/>
+            <ProjectsTable/>
         </div>
     );
 }
