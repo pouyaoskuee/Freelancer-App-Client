@@ -14,7 +14,7 @@ import CreateProject from "./CreateProject.jsx";
 import ToggleProjectStatus from "./ToggleProjectStatus.jsx";
 import {Link} from "react-router-dom";
 
-function ProjectTable() {
+function ProjectsTable() {
     const {projects, isPending} = useOwnerProjects()
     const [openCreate, setOpenCreate] = useState(false);
 
@@ -50,7 +50,7 @@ function ProjectTable() {
     )
 }
 
-export default ProjectTable;
+export default ProjectsTable;
 
 function TableRow({project , index}){
     const [openEdit, setOpenEdit] = useState(false);

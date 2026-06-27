@@ -1,8 +1,8 @@
-import ProjectTable from "../features/projects/ProjectTable.jsx";
+import ProjectsTable from "../features/projects/ProjectsTable.jsx";
 
 function Projects() {
     return (
-        <div><ProjectTable/></div>
+        <div><ProjectsTable/></div>
     );
 }
 
