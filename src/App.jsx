@@ -15,8 +15,8 @@ import SubmittedProjects from "./features/freelancer/SubmittedProjects.jsx";
 import Proposals from "./pages/Proposals.jsx";
 import FreelancerDashboard from "./pages/FreelancerDashboard.jsx";
 
-const queryClient = new QueryClient()
 function App() {
+    const queryClient = new QueryClient()
 
   return (
       <DarkModeProvider>
@@ -44,9 +44,6 @@ function App() {
               </div>
           </QueryClientProvider>
       </DarkModeProvider>
-
-
-
   )
 }
 
