@@ -7,7 +7,7 @@ function Proposals() {
     return (
         <div>
             <h1 className={'text-secondary-700 font-black '}>پروپوزال های شما</h1>
-            <ProposalsTable proposals={proposals} isPending={isPending} />
+            <ProposalsTable proposals={proposals} isPending={isPending} role={'freelancer'} />
         </div>
     );
 }

@@ -4,8 +4,9 @@ import {useState} from "react";
 import Modal from "../../ui/Modal.jsx";
 import SingleProposal from "./singleProposal.jsx";
 import Loading from "../../ui/Loading.jsx";
+import {toPersianNumbersWithComma} from "../../utils/toPersianNumber.js";
 
-function ProposalsTable({proposals , isPending , role}) {
+function ProposalsTable({proposals , isPending , role = 'owner'}) {
 
     const [openProposal, setOpenProposal] = useState(false)
     const [proposalId, setProposalId] = useState()
@@ -34,31 +35,34 @@ function ProposalsTable({proposals , isPending , role}) {
                 <thead>
                 <tr className={'*:text-start *:px-4 *:py-2 *:text-nowrap'}>
                     <td>#</td>
-                    <td>فریلنسر</td>
+                    {role === 'owner' && (<td>فریلنسر</td>)}
                     <td>توضیحات</td>
                     <td>زمان تحویل</td>
                     <td>هزینه</td>
                     <td>وضعیت</td>
-                    <td>عملیات</td>
+                    {role === 'owner' && (<td>عملیات</td>)}
+
                 </tr>
                 </thead>
                 <tbody className={'bg-secondary-0 *:border-2 *:border-secondary-100'} >
                 {proposals.map((proposal , index) => (
                     <tr className={'*:px-4 *:py-2'} key={proposal._id}>
                         <td>{index+1}</td>
-                        <td>{proposal.user.name}</td>
+                        {role === 'owner' && (<td>{proposal.user.name}</td>)}
                         <td>{truncateText(proposal.description , 30)}</td>
                         <td>{proposal.duration} روز</td>
-                        <td>{proposal.price}</td>
+                        <td>{toPersianNumbersWithComma(proposal.price)}</td>
                         <td><div className={`budge ${statusStyle[proposal.status].className}`}>{statusStyle[proposal.status].label}</div></td>
-                        <td>
-                            <button onClick={()=> {
-                                setOpenProposal(true)
-                                setProposalId(proposal._id)
-                            }}>
-                                جزعیات پیشنهاد
-                            </button>
-                        </td>
+                        {role === 'owner' && (
+                            <td>
+                                <button onClick={()=> {
+                                    setOpenProposal(true)
+                                    setProposalId(proposal._id)
+                                }}>
+                                    جزعیات پیشنهاد
+                                </button>
+                            </td>)}
+
                     </tr>
                 ))}
                 </tbody>

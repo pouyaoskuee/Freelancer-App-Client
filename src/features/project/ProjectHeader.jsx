@@ -3,7 +3,6 @@ import useMoveBack from "../../hooks/useMoveBack.js";
 
 function ProjectHeader({project}) {
 
-    console.log(project.title)
 
     const moveBack = useMoveBack()
 
