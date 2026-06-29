@@ -24,3 +24,8 @@ export function logOutApi(){
     return http.post('user/logout').then(({data})=>data.data)
 
 }
+
+export function getAllUsersApi(){
+    return http.get('admin/user/list').then(({data})=>data.data)
+
+}
