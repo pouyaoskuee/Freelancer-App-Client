@@ -1,4 +1,4 @@
-import StatBox from "./StatBox.jsx";
+import StatBox from "../../ui/StatBox.jsx";
 import {HiCollection, HiOutlineViewGrid} from "react-icons/hi";
 import {HiCurrencyDollar} from "react-icons/hi2";
 

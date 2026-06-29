@@ -1,4 +1,4 @@
-import DashboardHeader from "./DashboardHeader.jsx";
+import DashboardHeader from "../../ui/DashboardHeader.jsx";
 import DashboardStats from "./DashboardStats.jsx";
 import useOwnerProjects from "../projects/useOwnerProjects.js";
 import Loading from "../../ui/Loading.jsx";
