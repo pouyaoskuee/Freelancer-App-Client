@@ -15,6 +15,8 @@ import SubmittedProjects from "./features/freelancer/SubmittedProjects.jsx";
 import Proposals from "./pages/Proposals.jsx";
 import FreelancerDashboard from "./pages/FreelancerDashboard.jsx";
 import ProtectedRoute from "./ui/protectedRoute.jsx";
+import AdminLayout from "./features/admin/AdminLayout.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 
 function App() {
     const queryClient = new QueryClient()
@@ -40,6 +42,10 @@ function App() {
                           <Route path="dashboard" element={<FreelancerDashboard/>} />
                           <Route path="proposals" element={<Proposals/>} />
                           <Route path="projects" element={<SubmittedProjects/>} />
+                      </Route>
+                      <Route path='/admin' element={<ProtectedRoute><AdminLayout/></ProtectedRoute>}>
+                          <Route index element={<Navigate to={'dashboard'} replace={true} />} />
+                          <Route path="dashboard" element={<AdminDashboard/>} />
                       </Route>
                   </Routes>
               </div>
