@@ -10,7 +10,7 @@ function FilterDropDown({options , filterField}) {
     }
 
     return (
-        <select value={value} onChange={handleChange}>
+        <select className={'bg-secondary-0 rounded-lg p-1 text-secondary-800 '} value={value} onChange={handleChange}>
             {options.map((option) => (
                 <option key={option.value} value={option.value}>{option.label}</option>
             ))}
