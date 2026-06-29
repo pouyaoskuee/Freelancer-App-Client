@@ -25,6 +25,5 @@ export function getProjectApi(id) {
 }
 
 export function getAllProjectsApi(qs) {
-    console.log(qs)
     return http.get(`/project/list${qs}`).then(({data})=> data.data)
 }
