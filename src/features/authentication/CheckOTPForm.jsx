@@ -31,7 +31,7 @@ function CheckOtpForm({phoneNumber ,onBack , handleSubmit , time , setTime , isL
                 return navigate("/")
             }
             if (user.role === "OWNER") navigate("/owner")
-            if (user.role === "FREELANCER") navigate("/freeLancer")
+            if (user.role === "FREELANCER") navigate("/freelancer")
             if (user.role === "ADMIN") navigate("/admin")
         }catch(err){
             toast.error(err.response.data.message)
