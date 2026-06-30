@@ -29,3 +29,7 @@ export function getAllUsersApi(){
     return http.get('admin/user/list').then(({data})=>data.data)
 
 }
+export function userStatusApi({userId , status}){
+    return http.patch(`admin/user/verify/${userId}` , status).then(({data})=>data.data)
+
+}
