@@ -1,22 +1,29 @@
 import CheckOtpForm from "./CheckOTPForm.jsx";
 import SendOtpForm from "./SendOTPForm.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useMutation} from "@tanstack/react-query";
 import {getOtp} from "../../services/authService.js";
 import toast from "react-hot-toast";
 import {useForm} from "react-hook-form";
+import useUser from "./useUser.js";
+import {useNavigate} from "react-router-dom";
 
 function AuthContainer() {
+    const navigate = useNavigate();
     const [step, setStep] = useState(1)
     const [time, setTime] = useState(5)
+    const {user} = useUser()
     const {handleSubmit , register , getValues} = useForm()
-
     const {isPending ,  mutateAsync} =useMutation({
         mutationFn: getOtp
     })
 
+
+    useEffect(() => {
+        if (user) navigate("/")
+    } , [user])
+
     async function otpHandler(data){
-        // console.log(data)
 
         try {
             const {message} = await mutateAsync(data)

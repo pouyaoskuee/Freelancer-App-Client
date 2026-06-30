@@ -22,13 +22,11 @@ export function useAuthorize() {
         if (user && user.role===roles[desiredRole]) isAuthorized = true
     }
 
-    // if (!isLoading){
-    //     console.log(user)
-    //     console.log(desiredRole)
-    //     console.log(user?.role)
-    //     console.log(isAuthorized , isAuthenticated )
-    // }
 
 
-    return {isAuthenticated , isAuthorized , isLoading }
+    let verified = false
+    if (user && Number(user.status)===2) verified = true
+
+
+    return {isAuthenticated , isAuthorized , isLoading , verified }
 }

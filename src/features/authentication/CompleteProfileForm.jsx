@@ -1,5 +1,5 @@
 import Input from "../../ui/Input.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import ButtonPrimary from "../../ui/ButtonPrimary.jsx";
 import RadioInput from "../../ui/RadioInput.jsx";
 import {useMutation} from "@tanstack/react-query";
@@ -7,14 +7,20 @@ import {completeProfile} from "../../services/authService.js";
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import useUser from "./useUser.js";
 
 function CompleteProfileForm() {
     const navigate = useNavigate()
+    const {user} = useUser()
     const {register, handleSubmit, formState: {errors}} = useForm()
-
-    const {mutateAsync, isPending} = useMutation({
+    const {mutateAsync , isPending} = useMutation({
         mutationFn: completeProfile,
     })
+
+
+    useEffect(() => {
+        if (user) navigate("/")
+    } , [user])
 
     async function handleCompleteProfile({name, email, role}) {
         try {
