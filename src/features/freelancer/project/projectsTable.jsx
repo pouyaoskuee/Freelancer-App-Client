@@ -41,8 +41,6 @@ function TableRow({project , index}) {
     const [openModal, setOpenModal] = useState(false)
     const [projectId, setProjectId] = useState()
 
-    console.log(openModal)
-
 
 
     const statusStyle = {
