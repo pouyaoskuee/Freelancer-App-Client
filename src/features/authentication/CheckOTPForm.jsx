@@ -55,7 +55,7 @@ function CheckOtpForm({phoneNumber ,onBack , handleSubmit , time , setTime , isL
 
 
     return (
-       <section className={' bg-secondary-0 text-secondary-900 flex items-center justify-center h-screen'}>
+       <section className={' bg-secondary-0 text-secondary-900 flex items-center justify-center h-dvh'}>
            <div className={' space-y-2 w-full max-w-md bg-secondary-50 p-4 rounded-lg shadow-primary-300 shadow-sm dark:shadow-sm'}>
                <div className={'flex items-center justify-start gap-2'}>
                    <button onClick={onBack} className={'text-primary-800'}><HiOutlineArrowRightCircle size={30}/></button>

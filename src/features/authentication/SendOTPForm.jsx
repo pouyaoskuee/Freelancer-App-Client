@@ -7,8 +7,8 @@ function SendOtpForm({ register , handleSubmit , isLoading }) {
 
 
     return (
-        <section className={' bg-secondary-0 text-secondary-900 flex items-center justify-center h-screen'}>
-            <div className={'w-full max-w-md  bg-secondary-50 p-8 rounded-lg shadow-primary-300 shadow-sm dark:shadow-sm'}>
+        <section className={' bg-secondary-0 text-secondary-900 flex items-center justify-center h-dvh'}>
+            <div className={'mx-4 w-full max-w-md  bg-secondary-50 p-8 rounded-lg shadow-primary-300 shadow-sm dark:shadow-sm'}>
                 <form className={'flex flex-col gap-4'} onSubmit={handleSubmit}  >
                     <HiOutlinePhone className={' mx-auto mb-2  text-primary-900 border bg-secondary-0 border-gray-200 rounded-full p-4 size-18'} />
                     <p className={'font-medium text-center text-secondary-700'}>شماره موبایل خود را وارد کنید</p>
