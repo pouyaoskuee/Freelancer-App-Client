@@ -1,11 +1,10 @@
-import {Link} from "react-router-dom";
+import Header from "../ui/Header.jsx";
 
 function Home() {
     return (
-        <div>
-            its home page
-            <Link to={'/auth'}>go to auth</Link>
-        </div>
+        <>
+            <Header/>
+        </>
     );
 }
 
