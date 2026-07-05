@@ -81,11 +81,11 @@
 
 @layer components {
     .btn{
-        @apply text-lg py-1 px-2 rounded-xl transition-all duration-300 shadow-lg
+        @apply text-lg py-1 px-2 rounded-xl transition-all duration-300 shadow-lg dark:shadow-sm
     }
 
     .btn--primary{
-        @apply text-secondary-50 bg-primary-900 shadow-primary-300 hover:bg-primary-800
+        @apply text-secondary-0 bg-primary-900 shadow-primary-300 hover:bg-primary-800
     }
 
     .btn--secondary{
@@ -97,7 +97,7 @@
     }
 
     .input{
-        @apply  border border-secondary-200 bg-secondary-0  rounded-2xl p-2 hover:border-primary-500 focus:outline-none focus:bg-white focus:border-primary-500 focus:shadow-lg focus:shadow-primary-200
+        @apply  border border-secondary-200 bg-secondary-0  rounded-2xl p-2 hover:border-primary-500 focus:outline-none focus:bg-white focus:border-primary-500 focus:shadow-lg focus:shadow-primary-200 dark:shadow-sm focus:dark:shadow-sm
     }
 
     .budge{

@@ -31,12 +31,7 @@ function AuthContainer() {
             setTime(5)
             toast.success(message.status)
         }catch(error){
-            // console.log(error.response.data.message)
-            // toast.error(error?.response?.data?.data?.message)
             toast.error(error?.response?.data?.message)
-            // toast.error(error?.message)
-
-
         }
 
     }

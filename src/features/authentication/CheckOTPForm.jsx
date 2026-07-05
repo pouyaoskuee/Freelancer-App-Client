@@ -55,28 +55,30 @@ function CheckOtpForm({phoneNumber ,onBack , handleSubmit , time , setTime , isL
 
 
     return (
-       <section className={''}>
-           <button onClick={onBack} className={'text-primary-800'}><HiOutlineArrowRightCircle size={30}/></button>
-           <div className={'my-1'}>
-               <p className={'font-thin text-secondary-400 text-sm mb-1'}>کد تایید برای شماره موبایل {phoneNumber} ارسال گردید </p>
-               <div>{time>0?(<p className={'text-secondary-500 text-md'}>{time}ثانیه تا ارسال مجدد کد تایید</p>): (<button onClick={handleSubmit} className={'text-primary-700'}>ارسال مجدد کد</button>)}</div>
+       <section className={' bg-secondary-0 text-secondary-900 flex items-center justify-center h-screen'}>
+           <div className={' space-y-2 w-full max-w-md bg-secondary-50 p-4 rounded-lg shadow-primary-300 shadow-sm dark:shadow-sm'}>
+               <div className={'flex items-center justify-start gap-2'}>
+                   <button onClick={onBack} className={'text-primary-800'}><HiOutlineArrowRightCircle size={30}/></button>
+                   <p className={'font-thin text-secondary-400 text-sm mb-1'}>کد تایید برای شماره موبایل {phoneNumber} ارسال گردید </p>
+               </div>
+               <div>{time>0?(<p className={'text-secondary-500 text-sm'}>{time}ثانیه تا ارسال مجدد کد تایید</p>): (<button onClick={handleSubmit} className={'text-primary-700 text-sm'}>ارسال مجدد کد</button>)}</div>
+               <form onSubmit={checkOtpHandler} className={'space-y-4'} >
+                   <p className={'font-medium text-secondary-600'}>کد تایید را وارد کنید</p>
+                   <p></p>
+                   <OTPInput
+                       value={otp}
+                       onChange={e => setOtp(e)}
+                       renderInput={(props)=> <input {...props} />}
+                       inputType={'number'}
+                       numInputs={6}
+                       renderSeparator={<span>-</span>}
+                       containerStyle={'flex flex-row-reverse gap-1 justify-center sm:gap-2'}
+                       inputStyle={'m-2 border border-primary-500 rounded-sm size-8 text-center'}
+                       skipDefaultStyles={true}
+                   />
+                   <ButtonPrimary label={'تایید'} isLoading={isLoading}/>
+               </form>
            </div>
-           <form onSubmit={checkOtpHandler} >
-               <p className={'font-medium text-secondary-600'}>کد تایید را وارد کنید</p>
-               <p></p>
-               <OTPInput
-                   value={otp}
-                   onChange={e => setOtp(e)}
-                   renderInput={(props)=> <input {...props} />}
-                   inputType={'number'}
-                   numInputs={6}
-                   renderSeparator={<span>-</span>}
-                   containerStyle={'flex flex-row-reverse gap-2 justify-center'}
-                   inputStyle={'m-2 border border-primary-400 rounded-sm size-8 text-center'}
-                   skipDefaultStyles={true}
-               />
-               <ButtonPrimary label={'تایید'} isLoading={isLoading}/>
-           </form>
        </section>
     );
 }
