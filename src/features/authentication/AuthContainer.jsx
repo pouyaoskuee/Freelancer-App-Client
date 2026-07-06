@@ -11,7 +11,7 @@ import {useNavigate} from "react-router-dom";
 function AuthContainer() {
     const navigate = useNavigate();
     const [step, setStep] = useState(1)
-    const [time, setTime] = useState(5)
+    const [time, setTime] = useState(90)
     const {user} = useUser()
     const {handleSubmit , register , getValues} = useForm()
     const {isPending ,  mutateAsync} =useMutation({
