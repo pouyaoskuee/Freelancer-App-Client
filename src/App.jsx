@@ -17,6 +17,7 @@ import AdminDashboard from "./pages/AdminDashboard.jsx";
 import Users from "./pages/Users.jsx";
 import AppLayout from "./ui/AppLayout.jsx";
 import Header from "./ui/Header.jsx";
+import Footer from "./ui/Footer.jsx";
 
 function App() {
     const queryClient = new QueryClient()
@@ -52,6 +53,7 @@ function App() {
                           <Route path="proposals" element={<Proposals/>} />
                       </Route>
                   </Routes>
+                  <Footer/>
               </div>
           </QueryClientProvider>
       </DarkModeProvider>
