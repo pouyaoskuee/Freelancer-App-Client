@@ -2,8 +2,7 @@
 function Footer() {
     return (
         <footer className={'bg-primary-200 w-full'}>
-            <div></div>
-
+            <div>test</div>
         </footer>
     );
 }
