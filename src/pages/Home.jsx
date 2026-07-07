@@ -1,9 +1,9 @@
-import Header from "../ui/Header.jsx";
+import HomeContainer from "../features/home/HomeContainer.jsx";
 
 function Home() {
     return (
         <>
-            <Header/>
+            <HomeContainer/>
         </>
     );
 }
