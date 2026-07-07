@@ -11,16 +11,12 @@ import useUser from "./useUser.js";
 
 function CompleteProfileForm() {
     const navigate = useNavigate()
-    const {user} = useUser()
     const {register, handleSubmit, formState: {errors}} = useForm()
     const {mutateAsync , isPending} = useMutation({
         mutationFn: completeProfile,
     })
 
 
-    useEffect(() => {
-        if (user) navigate("/")
-    } , [user])
 
     async function handleCompleteProfile({name, email, role}) {
         try {
