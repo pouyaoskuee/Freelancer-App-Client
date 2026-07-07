@@ -16,7 +16,7 @@ function Input({label , id , type , placeholder='' , register ,validationSchema 
                 type={type}
                 placeholder={placeholder}
                 {...register(id , validationSchema)}
-                className={'w-full mt-2 font-thin input '}
+                className={'w-full mt-2 font-thin input text-secondary-800 '}
             />
             {
                 errors && errors[id] && (
