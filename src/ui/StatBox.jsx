@@ -2,7 +2,6 @@ import {toPersianNumbersWithComma} from "../utils/toPersianNumber.js";
 
 function StatBox({icon,label, count , color}) {
 
-    console.log(count)
 
     const styleColor = {
         primary: 'bg-primary-300 text-primary-700',
@@ -13,7 +12,7 @@ function StatBox({icon,label, count , color}) {
 
 
     return (
-        <div className={' *:mx-auto bg-secondary-0 grid grid-cols-1 gap-2 p-2 sm:grid-cols-[5rem_1fr] '}>
+        <div className={' *:mx-auto bg-secondary-0 rounded-lg grid grid-cols-1 gap-2 p-2 sm:grid-cols-[5rem_1fr] '}>
             <div className={` ${styleColor[color]} rounded-full m-auto p-2 sm:row-span-2 `}>
                 {icon}
             </div>

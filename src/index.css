@@ -97,7 +97,7 @@
     }
 
     .input{
-        @apply text-secondary-0  border border-secondary-200 bg-secondary-0  rounded-2xl p-2 hover:border-primary-500 focus:outline-none focus:bg-white focus:border-primary-500 focus:shadow-lg focus:shadow-primary-200 dark:shadow-sm focus:dark:shadow-sm
+        @apply  border border-secondary-200 bg-secondary-0  rounded-2xl p-2 hover:border-primary-500 focus:outline-none focus:bg-secondary-0 focus:border-primary-500 focus:shadow-lg focus:shadow-primary-200 dark:shadow-sm focus:dark:shadow-sm
     }
 
     .budge{
