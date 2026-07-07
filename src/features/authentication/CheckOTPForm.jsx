@@ -26,8 +26,8 @@ function CheckOtpForm({phoneNumber ,onBack , handleSubmit , time , setTime , isL
             toast.success(message)
 
             if(!user.isActive) return navigate("/complete-profile")
-            if (user.status!==2){
-                toast.custom('حساب کاربری شما در انتظار تایید از سمت ادمین قرار گرفت' , {icon:'ℹ️'})
+            else if (user.status!==2){
+                toast.success('حساب کاربری شما در انتظار تایید از سمت ادمین قرار گرفت' , {icon:'ℹ️'})
                 return navigate("/")
             }
             if (user.role === "OWNER") navigate("/owner")
