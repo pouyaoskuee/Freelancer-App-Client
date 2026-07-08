@@ -4,6 +4,7 @@ import WorkBox from "./WorkBox.jsx";
 import WorkWithoutBox from "./WorkWithoutBox.jsx";
 import NavBar from "./NavBar.jsx";
 import FreelancerCard from "./FreelancerCard.jsx";
+import ProjectCard from "./projectCard.jsx";
 
 function HomeContainer() {
     return (
@@ -51,9 +52,31 @@ function HomeContainer() {
                 </div>
             </section>
 
-            <section></section>
+            <section className={'p-6 space-y-4'}>
+                <NavBar label={'پروژه های برتر'}/>
+                <div className={'flex justify-evenly items-center gap-4 '}>
+                    <ProjectCard src={'project-brand-identity.png'} budge={'برند سازی'} price={'5000000'} title={'طراحی هویت بصری'} />
+                    <ProjectCard src={'project-saas-dashboard.png'} budge={'وبسایت'} price={'2800000'} title={'پنل مدریت فروشگاه'} />
+                    <ProjectCard src={'project-mobile-app.png'} budge={'اپلکیشن'} price={'3500000'} title={'اپلکیشن تناسب اندام'} />
+                </div>
 
-            <section></section>
+
+            </section>
+
+            <section className={'p-6 space-y-4'}>
+                <NavBar label={'نظر کارفرمایان ما'}/>
+                <div className={'bg-primary-50/50 rounded-lg px-2 py-4 shadow-lg border border-secondary-100 space-y-5'}>
+                    <div className={'flex'}>
+                        <img className={'w-8 h-6'} src="/pictures/quote-icon.png" alt=""/>
+                        <p className={'px-6'}>ددلنسر به من کمک کرد بهترین توسعه دهنده را برای پروژم پیدا کنم.فرایند کار بسیار اسان و نتیجه فوق العاده بود</p>
+                        <img className={'w-8 h-6'} src="/pictures/quote-icon.png" alt=""/>
+                    </div>
+                    <div className={'flex items-center justify-end gap-2 pl-10'}>
+                        <p><span className={'text-secondary-400'}>مدیر عمل تکنوکیو</span> رضا احمدی</p>
+                        <img src="/pictures/testimonial-reza-avatar.png" alt=""/>
+                    </div>
+                </div>
+            </section>
 
             <section></section>
 

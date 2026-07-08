@@ -26,7 +26,7 @@ function App() {
       <DarkModeProvider>
           <QueryClientProvider client={queryClient}>
               <Toaster/>
-              <div className={'flex flex-col h-screen'}>
+              <div className={'flex flex-col h-screen text-[10px] sm:text-2xl'}>
                   <Header/>
                   <Routes>
                       <Route path="/" element={<Home/>} />

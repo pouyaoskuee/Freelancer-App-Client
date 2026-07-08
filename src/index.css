@@ -131,7 +131,6 @@ html{
 body{
     font-family: var(--font-vazir) , sans-serif;
     background-color: var(--backgrund);
-    font-size: 1rem;
     color: var(--secondary-800) ;
 }
 
