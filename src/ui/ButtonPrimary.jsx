@@ -7,7 +7,7 @@ function ButtonPrimary({isLoading , label}) {
                 isLoading ? <Loading/>:
                     <button
                         type="submit"
-                        className={' w-full btn btn--primary py-2'}
+                        className={' w-full btn btn--primary  py-2'}
                     >{label}</button>
             }
         </div>

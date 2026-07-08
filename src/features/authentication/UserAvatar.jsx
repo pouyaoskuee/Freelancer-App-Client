@@ -20,7 +20,7 @@ function UserAvatar() {
                 src="/user.jpg"
                 alt="userAvatar"/>
             <span className={'hidden sm:block '}>{user?.name}</span>
-            <div className={`bg-secondary-50 absolute top-11  w-0 h-0 overflow-auto -right-20 sm:right-0 opacity-0 rounded-md  transition-all duration-300 ${modal && 'opacity-100 h-dvh w-[12rem]' }  `}>
+            <div className={`bg-secondary-50 absolute top-11  w-0 h-0 overflow-auto -right-20 sm:right-0 opacity-0 rounded-md  transition-all duration-300 ${modal && 'opacity-100 h-max w-[12rem]' }  `}>
                 <NavigateList/>
             </div>
         </div>

@@ -85,7 +85,7 @@
     }
 
     .btn--primary{
-        @apply text-secondary-0 bg-primary-900 shadow-primary-300 hover:bg-primary-800
+        @apply text-secondary-0 dark:text-secondary-900 bg-primary-900 shadow-primary-300 hover:bg-primary-800
     }
 
     .btn--secondary{
