@@ -4,8 +4,6 @@ function Home() {
     return (
         <>
             <HomeContainer/>
-            <HomeContainer/>
-            <HomeContainer/>
         </>
     );
 }
