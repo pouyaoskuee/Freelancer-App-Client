@@ -10,8 +10,8 @@ import LongArow from "./LongArow.jsx";
 
 function HomeContainer() {
     return (
-        <main className={''}>
-            <section className={'flex flex-col gap-8 p-6 bg-primary-50/50 sm:flex-row  '}>
+        <main className={'bg-background '}>
+            <section className={'flex flex-col gap-8 p-6 dark:bg-background bg-primary-50/50  sm:flex-row  '}>
                 <div className={'space-y-4 sm:w-1/2 text-center '}>
                     <div className={'bg-primary-100 text-primary-900 font-bold rounded-2xl p-2 w-max mx-auto '}>بزرگترین بازار فریلنسری ایران</div>
                     <h2 className={'text-2xl font-bold '} >بهترین فریلنسر هارا استخدام کنید</h2>
@@ -36,13 +36,13 @@ function HomeContainer() {
 
             <section className={'space-y-4 py-6 px-2  '}>
                 <div className={'text-center space-y-2'}>
-                    <h3 className={'text-xl font-medium'}>ددلسنر چگگونه کار میکند</h3>
+                    <h3 className={'text-xl font-medium'}>ددلسنر چگونه کار میکند</h3>
                     <p className={'text-secondary-500 font-medium'}>پروژه خود را در ۴ مرحله ساده برونسپاری کنید</p>
                 </div>
                 <div className={'flex items-start justify-center'}>
                     <HowWorkBox src={'step-post-project.png'} title={'۱-ثبت پروژه'} description={'جزعیات پروژه خود را ثبت کنید'} />
                     <LongArow/>
-                    <HowWorkBox src={'step-receive-proposals.png'} title={'۲-دریفات پیشنهاد'} description={'پیشنهاد هارا از فریلنسر ها دریافت کنید'} />
+                    <HowWorkBox src={'step-receive-proposals.png'} title={'۲-دریافت پیشنهاد'} description={'پیشنهاد هارا از فریلنسر ها دریافت کنید'} />
                     <LongArow/>
                     <HowWorkBox src={'step-hire-collaborate.png'} title={'۳-استخدام و همکاری'} description={'بهترین فریلنسر را انتخاب کنید'} />
                     <LongArow/>
@@ -52,18 +52,18 @@ function HomeContainer() {
 
             <section className={'space-y-4 p-6'}>
                 <NavBar label={'دسته بندی محبوب'}/>
-                <div className={'grid grid-cols-3 gap-y-4'}>
-                    <WorkBox label={'طراحی و گرافیک'} src={'mobile.png'}/>
-                    <WorkBox label={'طراحی و گرافیک'} src={'development.png'}/>
-                    <WorkBox label={'طراحی و گرافیک'} src={'graphic.png'}/>
-                    <WorkBox label={'طراحی و گرافیک'} src={'ai.png'}/>
-                    <WorkBox label={'طراحی و گرافیک'} src={'translate.png'}/>
-                    <WorkBox label={'طراحی و گرافیک'} src={'marketing.png'}/>
+                <div className={'grid grid-cols-3 gap-4'}>
+                    <WorkBox label={'توسعه موبایل'} src={'mobile.png'} numOfFreelancer={3737} />
+                    <WorkBox label={'برنامه نویسی و توسعه'} src={'development.png'} numOfFreelancer={1286} />
+                    <WorkBox label={'طراحی و گرافیک'} src={'graphic.png'} numOfFreelancer={2742} />
+                    <WorkBox label={'هوش مصنوعی'} src={'ai.png'} numOfFreelancer={1525} />
+                    <WorkBox label={'تولید محتوا و ترجمه'} src={'translate.png'} numOfFreelancer={7362} />
+                    <WorkBox label={'بازاریابی دیجتال'} src={'marketing.png'} numOfFreelancer={4372} />
                 </div>
             </section>
 
             <section>
-                <div className={'flex justify-evenly items-center bg-primary-50/50 py-6 px-2'}>
+                <div className={'flex justify-evenly items-center dark:bg-secondary-50 bg-primary-50/50 py-6 px-2'}>
                     <WorkWithoutBox label={'همه پروژه های انجام شده'} src={'projects-completed.png'} number={'+۲۵ هزار'}/>
                     <WorkWithoutBox label={'فریلنسر فعال'} src={'active-freelancers.png'} number={'+۸ هزار'}/>
                     <WorkWithoutBox label={'رضایت مشتریان'} src={'success-rate.png'} number={'۹۸ ٪'}/>
@@ -93,7 +93,7 @@ function HomeContainer() {
 
             <section className={'p-6 space-y-4'}>
                 <NavBar label={'نظر کارفرمایان ما'}/>
-                <div className={'bg-primary-50/50 rounded-lg px-2 py-4 shadow-lg border border-secondary-100 space-y-5'}>
+                <div className={' dark:bg-secondary-50 bg-primary-50/50 rounded-lg px-2 py-4 shadow-lg border border-secondary-100 space-y-5'}>
                     <div className={'flex'}>
                         <img className={'w-8 h-6'} src="/pictures/quote-icon.png" alt=""/>
                         <p className={'px-6 text-secondary-500 font-semibold'}>ددلنسر به من کمک کرد بهترین توسعه دهنده را برای پروژم پیدا کنم.فرایند کار بسیار اسان و نتیجه فوق العاده بود</p>

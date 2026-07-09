@@ -2,7 +2,7 @@ import {toPersianNumbersWithComma} from "../../utils/toPersianNumber.js";
 
 function ProjectCard({src , budge , title , price  }) {
     return (
-        <div className={' shadow-2xl shadow-secondary-300 rounded-2xl '}>
+        <div className={'dark:shadow-md shadow-2xl shadow-secondary-300 rounded-2xl '}>
             <img src={`/pictures/${src}`} alt={`${src}`} />
             <div className={'p-2 text-center space-y-3 flex flex-col '}>
                 <div className={'bg-primary-50 rounded-2xl p-1 w-1/2 self-end text-primary-900 '}>{budge}</div>
