@@ -89,7 +89,7 @@
     }
 
     .btn--secondary{
-        @apply text-secondary-100 bg-secondary-300 shadow-secondary-300 hover:bg-secondary-200
+        @apply text-secondary-800 bg-secondary-0 shadow-secondary-300 hover:bg-secondary-200 border border-secondary-300
     }
 
     .btn--danger{
