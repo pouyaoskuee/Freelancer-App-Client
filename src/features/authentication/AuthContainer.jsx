@@ -48,9 +48,7 @@ function AuthContainer() {
     }
 
     return (
-        <main >
-            {renderStep()}
-        </main>
+            renderStep()
     );
 }
 

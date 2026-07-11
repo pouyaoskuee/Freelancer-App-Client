@@ -10,7 +10,7 @@ import LongArow from "./LongArow.jsx";
 
 function HomeContainer() {
     return (
-        <main className={'bg-background '}>
+        <div className={'bg-background '}>
             <section className={'flex flex-col gap-8 p-6 dark:bg-background bg-primary-50/50  sm:flex-row  '}>
                 <div className={'space-y-4 sm:w-1/2 text-center '}>
                     <div className={'bg-primary-100 text-primary-900 font-bold rounded-2xl p-2 w-max mx-auto '}>بزرگترین بازار فریلنسری ایران</div>
@@ -105,7 +105,7 @@ function HomeContainer() {
                     </div>
                 </div>
             </section>
-        </main>
+        </div>
     );
 }
 
