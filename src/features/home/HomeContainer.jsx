@@ -7,6 +7,7 @@ import FreelancerCard from "./FreelancerCard.jsx";
 import ProjectCard from "./projectCard.jsx";
 import HowWorkBox from "./HowWorkBox.jsx";
 import LongArow from "./LongArow.jsx";
+import Footer from "./Footer.jsx";
 
 function HomeContainer() {
     return (
@@ -21,34 +22,22 @@ function HomeContainer() {
                         <ButtonPrimary label={'استخدام فریلنسر'}/>
                         <ButtonSecondary label={'ثبت نام به عنوان فریلنسر'}/>
                     </div>
-                    <div className={'flex items-center justify-center gap-2 text-sm '}>
+                    <div className={'flex items-center justify-center gap-5 text-sm '}>
                         <div>
                             <p className={'font-bold'}>+۲۵ هزار</p>
                             <p className={'text-secondary-500'}>کارفرمایان راضی</p>
                         </div>
-                        <div>
-                            <img className={'w-60 h-15 dark:bg-secondary-900 rounded-full p-2'} src="/pictures/hero-avatar-stack.png" alt=""/>
+                        <div className={'flex *:-mr-3 *:rounded-full *:object-cover *:size-15 *:border-4 *:border-secondary-0'}>
+                            <img src="/pictures/freelancer-kamran-photo.png" alt=""/>
+                            <img src="/pictures/freelancer-nazanin-photo.png" alt=""/>
+                            <img src="/pictures/freelancer-mehdi-photo.png" alt=""/>
+                            <img src="/pictures/freelancer-sara-photo.png" alt=""/>
                         </div>
                     </div>
                 </div>
                 <img className={' rounded-2xl'} src="/pictures/hero.png" alt="hero image" />
             </section>
 
-            <section className={'space-y-4 py-6 px-2  '}>
-                <div className={'text-center space-y-2'}>
-                    <h3 className={'text-xl font-medium'}>ددلسنر چگونه کار میکند</h3>
-                    <p className={'text-secondary-500 font-medium'}>پروژه خود را در ۴ مرحله ساده برونسپاری کنید</p>
-                </div>
-                <div className={'flex items-start justify-center'}>
-                    <HowWorkBox src={'step-post-project.png'} title={'۱-ثبت پروژه'} description={'جزعیات پروژه خود را ثبت کنید'} />
-                    <LongArow/>
-                    <HowWorkBox src={'step-receive-proposals.png'} title={'۲-دریافت پیشنهاد'} description={'پیشنهاد هارا از فریلنسر ها دریافت کنید'} />
-                    <LongArow/>
-                    <HowWorkBox src={'step-hire-collaborate.png'} title={'۳-استخدام و همکاری'} description={'بهترین فریلنسر را انتخاب کنید'} />
-                    <LongArow/>
-                    <HowWorkBox src={'step-pay-securely.png'} title={'۴-پرداخت امن'} description={'با خیال راحت پرداخت امن انجام دهید'}/>
-                </div>
-            </section>
 
             <section className={'space-y-4 p-6'}>
                 <NavBar label={'دسته بندی محبوب'}/>
@@ -71,6 +60,23 @@ function HomeContainer() {
                 </div>
             </section>
 
+
+            <section className={'space-y-4 py-6 px-2  '}>
+                <div className={'text-center space-y-2'}>
+                    <h3 className={'text-xl font-medium'}>ددلسنر چگونه کار میکند</h3>
+                    <p className={'text-secondary-500 font-medium'}>پروژه خود را در ۴ مرحله ساده برونسپاری کنید</p>
+                </div>
+                <div className={'flex items-start justify-center'}>
+                    <HowWorkBox src={'step-post-project.png'} title={'۱-ثبت پروژه'} description={'جزعیات پروژه خود را ثبت کنید'} />
+                    <LongArow/>
+                    <HowWorkBox src={'step-receive-proposals.png'} title={'۲-دریافت پیشنهاد'} description={'پیشنهاد هارا از فریلنسر ها دریافت کنید'} />
+                    <LongArow/>
+                    <HowWorkBox src={'step-hire-collaborate.png'} title={'۳-استخدام و همکاری'} description={'بهترین فریلنسر را انتخاب کنید'} />
+                    <LongArow/>
+                    <HowWorkBox src={'step-pay-securely.png'} title={'۴-پرداخت امن'} description={'با خیال راحت پرداخت امن انجام دهید'}/>
+                </div>
+            </section>
+
             <section className={'p-6 space-y-4'}>
                 <NavBar label={'فریلنسر های برتر'}/>
                 <div className={'flex justify-evenly items-center gap-4 '}>
@@ -87,8 +93,6 @@ function HomeContainer() {
                     <ProjectCard src={'project-saas-dashboard.png'} budge={'وبسایت'} price={'2800000'} title={'پنل مدریت فروشگاه'} />
                     <ProjectCard src={'project-mobile-app.png'} budge={'اپلکیشن'} price={'3500000'} title={'اپلکیشن تناسب اندام'} />
                 </div>
-
-
             </section>
 
             <section className={'p-6 space-y-4'}>
@@ -105,6 +109,7 @@ function HomeContainer() {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </div>
     );
 }

@@ -29,7 +29,7 @@ function App() {
               <Toaster/>
               <div className={'text-[10px] sm:text-sm'}>
                   <Header/>
-                  <main className={' overflow-y-auto *:h-[calc(100vh-80px)] *:pt-20 '}>
+                  <main className={' overflow-y-auto *:h-[calc(100vh-4rem)] *:pt-20 *:sm:h-screen '}>
                       <Routes>
                           <Route path="/" element={<Home/>} />
                           <Route path="*" element={<NotFound />} />
@@ -57,7 +57,7 @@ function App() {
                           </Route>
                       </Routes>
                   </main>
-                  <Footer/>
+                  <div className={'sm:hidden'}><Footer/></div>
               </div>
           </QueryClientProvider>
       </DarkModeProvider>
