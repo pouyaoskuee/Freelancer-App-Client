@@ -14,14 +14,14 @@ function Filter({filterField , options}) {
 
     return (
         <div className={'flex items-center gap-4 text-xs'}>
-            <span>وضعیت</span>
-            <div className={'flex items-center gap-4 bg-secondary-0 p-2 rounded-lg'}>
+            <span >وضعیت پروژه:</span>
+            <div className={'flex items-center gap-4 bg-secondary-0 p-1 rounded-lg'}>
                 {options.map(item => {
                     const isActive = currentFilter === item.value;
                     return (
                         <button
                             disabled={isActive}
-                            className={` ${isActive ? 'bg-primary-900 text-white' : 'bg-secondary-0 text-secondary-800'} rounded-lg px-4 py-2 font-bold transition-all duration-300`}
+                            className={` ${isActive ? 'bg-primary-900 text-white' : 'bg-secondary-0 text-secondary-800'} rounded-lg px-4 py-2 transition-all duration-300`}
                             onClick={() => handleChange(item.value)}
                             key={item.value}>
                             {item.label}

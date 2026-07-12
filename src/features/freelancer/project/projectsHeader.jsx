@@ -33,12 +33,14 @@ function ProjectsHeader() {
 
 
     return (
-        <div className={'flex justify-between items-center mb-8'}>
-            <h2 className={'font-normal text-lg'}>پروژه های باز شما</h2>
-            <div className={'flex gap-4'}>
+        <div className={'flex flex-col justify-between items-center mb-4'}>
+            <h2 className={'text-center font-semibold mb-10 text-base sm:text-xl'}>پروژه ها</h2>
+            <div className={'flex flex-col items-center gap-4 w-full px-4 font-medium'}>
                 <Filter filterField={'status'} options={statusOption} />
-                <FilterDropDown filterField={'category'} options={[{label: 'همه' , value: 'ALL'} , ...transformedCategory]}/>
-                <FilterDropDown filterField={'sort'} options={sortOption}/>
+                <div className={'w-full flex justify-between gap-4'}>
+                    <FilterDropDown label={'دسته بندی'} filterField={'category'} options={[{label: 'همه' , value: 'ALL'} , ...transformedCategory]}/>
+                    <FilterDropDown label={'بر اساس'} filterField={'sort'} options={sortOption}/>
+                </div>
             </div>
         </div>
     );

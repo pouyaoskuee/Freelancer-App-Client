@@ -19,7 +19,7 @@ function AppLayout() {
         <div className={`flex flex-1 overflow-auto`}>
             <aside className={`transition-all duration-1000 ease-out bg-secondary-0 w-0  ${sideBar ? ' w-27 p-2 sm:w-53 sm:p-5':'p-0'} `} >
                 <NavigateList/>
-                <div onClick={()=>setSideBar((prevState)=>!prevState)} className={` size-8 flex items-center justify-center rounded-full bg-secondary-0 fixed top-1/2 -right-2 transition-all duration-1000 ease-out ${sideBar && ' right-19 rotate-180 sm:right-44'} `}>
+                <div onClick={()=>setSideBar((prevState)=>!prevState)} className={` size-8 flex items-center justify-center rounded-full bg-secondary-0 fixed top-1/2 -right-2 transition-all duration-1000 ease-out cursor-pointer ${sideBar && ' right-19 rotate-180 sm:right-44'} `}>
                     <HiOutlineChevronLeft size={'25'}/>
                 </div>
             </aside>

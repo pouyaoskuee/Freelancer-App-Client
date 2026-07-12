@@ -6,7 +6,7 @@ function Proposals() {
     console.log(proposals);
     return (
         <div>
-            <h1 className={'text-secondary-700 font-black '}>پروپوزال های شما</h1>
+            <h1 className={'text-center font-semibold mb-10 text-base sm:text-xl'}>پروپوزال ها</h1>
             <ProposalsTable proposals={proposals} isPending={isPending} role={'freelancer'} />
         </div>
     );
