@@ -4,7 +4,7 @@ import {HiBanknotes} from "react-icons/hi2";
 
 function Footer() {
     return (
-        <footer className={'px-6 bg-secondary-0 w-full fixed bottom-0 sm:hidden'}>
+        <footer className={'px-6 bg-secondary-0 w-full sticky sm:hidden'}>
             <div className={'flex justify-between '}>
                 <NavBarMobile to={'/'} icon={<HiHome/>} label={'خانه'}/>
                 <NavBarMobile to={'/not-build'} icon={<HiCollection/>} label={'همه پروژه ها'}/>

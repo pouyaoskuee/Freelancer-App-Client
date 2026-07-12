@@ -29,7 +29,7 @@ function App() {
               <Toaster/>
               <div className={'text-[10px] sm:text-sm'}>
                   <Header/>
-                  <main className={' overflow-y-auto *:h-[calc(100vh-4rem)] *:pt-20 *:sm:h-screen '}>
+                  <main className={' overflow-y-auto *:h-[calc(100dvh-9.3rem)] *:sm:h-screen '}>
                       <Routes>
                           <Route path="/" element={<Home/>} />
                           <Route path="*" element={<NotFound />} />

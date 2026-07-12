@@ -9,7 +9,7 @@ function Header() {
     const navigate = useNavigate();
 
     return (
-        <header className={` bg-secondary-0 text-secondary-900  px-4 border-secondary-100 flex justify-between items-center gap-2 sm:border-r-2 w-full fixed  ${isLoading ? 'blur-sm opacity-50' : ''}`}>
+        <header className={` bg-secondary-0 text-secondary-900  px-4 border-secondary-100 flex justify-between items-center gap-2 sm:border-r-2 w-full sticky top-0  ${isLoading ? 'blur-sm opacity-50' : ''}`}>
             <div className={'flex items-center gap-3 sm:flex-row-reverse'}>
                 <NavBarMenu/>
                 <img onClick={()=>navigate('/')} src={'/logo/Deadlancer.png'} alt={'logo'} className={'size-20 cursor-pointer'} />

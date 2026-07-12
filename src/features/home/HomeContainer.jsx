@@ -35,7 +35,7 @@ function HomeContainer() {
                         </div>
                     </div>
                 </div>
-                <img className={'  dark:bg-primary-50 dark:rounded-full'} src="/pictures/hero.png" alt="hero image" />
+                <img src="/pictures/hero.png" alt="hero image" />
             </section>
 
 
