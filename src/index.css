@@ -176,15 +176,24 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
     border-radius: var(--radius-2xl)!important;
     padding: 0.5rem!important;
     --rti-main: none!important;
+    background-color: var(--secondary-0)!important;
 }
 
 .rti--container:hover {
     border-color: var(--color-primary-500)!important ;
 
-}.rti--container:focus-within {
+}
+.rti--container:focus-within {
      border-color: var(--color-primary-500)!important ;
      box-shadow: 0 4px 15px -3px var(--color-primary-400), 0 4px 6px -4px var(--color-primary-400)!important ;
+}
+.dark .rti--container:focus-within {
+     box-shadow: 0 2px 7px -2px var(--color-primary-400), 0 2px 3px -2px var(--color-primary-400)!important ;
+}
 
+
+.rti--tag{
+    background-color:var(--secondary-200)!important; ;
 }
 
 

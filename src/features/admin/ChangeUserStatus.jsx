@@ -36,7 +36,7 @@ function ChangeUserStatus({userId , onClose}) {
 
     return (
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className={'space-y-4'} onSubmit={handleSubmit(onSubmit)}>
             <Select register={register} id={'status'} options={options}  />
             <ButtonPrimary label={'تایید'} isLoading={isPending} />
         </form>

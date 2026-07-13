@@ -2,7 +2,7 @@ import Input from "../../ui/Input.jsx";
 import {useForm} from "react-hook-form";
 import Select from "../../ui/Select.jsx";
 import {TagsInput} from "react-tag-input-component";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import DatePickerField from "../../ui/DatePickerField.jsx";
 import {useCategories} from "../../hooks/useCategories.js";
 import {useCreateProject} from "./useCreateProject.js";
@@ -98,7 +98,7 @@ function CreateProject({onClose , project={}}) {
             </div>
             <DatePickerField date={date} setDate={setDate} label="ددلاین" />
 
-            <ButtonPrimary label={'ثبت پروژه جدید'} isLoading={isCreating}/>
+            <ButtonPrimary label={'ثبت پروژه جدید'} isLoading={isCreating || isEditing}/>
         </form>
     );
 }

@@ -64,7 +64,8 @@ function TableRow({user , index}) {
             <td>{user.role}</td>
             <td>
                 <div
-                    className={`budge ${statusStyle[user.status].className}`}>{statusStyle[user.status].label}</div>
+                    className={`budge text-nowrap ${statusStyle[user.status].className}`}>{statusStyle[user.status].label}
+                </div>
             </td>
             <td>
                 <div className={'flex pr-2'}>
