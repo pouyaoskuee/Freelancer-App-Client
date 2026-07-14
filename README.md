@@ -1,319 +1,177 @@
-ریدمی فارسی
+# Deadlancer - Freelancing Platform
 
-Deadlancer - Freelancing Platform
-یک پلتفرم برای فریلنسریگ که کارفرمایان رو به فریلسنر ها متصل میکند
+```{=html}
+<p align="center">
+```
+`<img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/homeDesktopDark2.png" width="100%">`{=html}
+```{=html}
+</p>
+```
+```{=html}
+<p align="center">
+```
+A modern full-stack freelancing platform connecting employers with
+freelancers through a secure and responsive web application.
+```{=html}
+</p>
+```
+```{=html}
+<p align="center">
+```
+`<a href="https://deadlancer.ir">`{=html}🌐 Live Demo`</a>`{=html} •
+`<a href="https://github.com/pouyaoskuee/Freelancer-App-Client">`{=html}Frontend`</a>`{=html}
+•
+`<a href="https://github.com/pouyaoskuee/Freelancer-App-Server">`{=html}Backend`</a>`{=html}
+```{=html}
+</p>
+```
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-38BDF8?logo=tailwindcss)
+![React_Query](https://img.shields.io/badge/TanStack_Query-FF4154)
+![License](https://img.shields.io/badge/License-Portfolio-success)
 
-Overview:
-Deadlancer یک پلتفرم  بصورت (Full-stack) فریلنسینگ است که در آن کارفرمایان می‌توانند پروژه تعریف کنند و فریلنسرها پیشنهادهای کاری (Proposal) خود را ارسال نمایند.
+------------------------------------------------------------------------
 
-اپلیکیشن شامل سه داشبورد مجزا است:
+## Overview
 
-*   داشبورد کارفرما
-*   داشبورد فریلنسر
-*   داشبورد مدیر (ادمین)
+Deadlancer is a full-stack freelancing platform that connects employers
+with freelancers. Employers can create projects while freelancers browse
+projects and submit proposals. The platform provides three independent
+dashboards:
 
-احراز هویت کاربران از طریق شماره موبایل و کد یک‌بارمصرف (OTP) انجام می‌شود. پس از ثبت‌نام، مدیر سیستم حساب کاربری را بررسی و تأیید می‌کند تا دسترسی به امکانات پلتفرم برای کاربر فعال شود.
+-   Employer Dashboard
+-   Freelancer Dashboard
+-   Admin Dashboard
 
+Users authenticate using OTP verification via mobile number. After
+completing their profile, an administrator reviews and approves the
+account before granting full access.
 
-⸻
+------------------------------------------------------------------------
 
-Features
-Authentication
-* OTP Authentication
-* User Registration
-* User Login
-* Cookie-based Authentication
-* Access Token
-* Refresh Token
-* Protected Routes
-  Employer
-* Create Projects
-* Manage Projects
-* View Received Proposals
-  Freelancer
-* Browse Projects
-* Submit Proposals
-* Manage Submitted Proposals
-  Admin
-* User Verification
-* User Management
-* Platform Management
-* Project Management
-  General
-* Responsive Design
-* Search
-* Filtering
-* Toast Notifications
-* Loading States
-* Reusable Components
-* Dark Mode
+## Highlights
 
-⸻
+-   OTP Authentication
+-   JWT Authentication
+-   Cookie-based Authentication
+-   Role-based Dashboards
+-   Protected Routes
+-   Search & Filtering
+-   Responsive (Mobile First)
+-   Dark Mode
+-   REST API Integration
+-   Reusable Components
+-   Custom Hooks
 
-Tech Stack
-Frontend
-* React
-* Vite
-* Tailwind CSS v4
-* React Router DOM
-* Axios
-* TanStack React Query
-* React Hook Form
-* React Hot Toast
-* React Loader Spinner
-* Headless UI
-* React Date Picker
-* React Tag Input
-* Custom Hooks
+## Tech Stack
 
+### Frontend
 
-Backend
-بک اند پروژه بصورت جداگانه توسط شخصی دیگر توسئه داده شده و api ها در اختیار فرانت کار قرار گرفته است
+-   React
+-   Vite
+-   Tailwind CSS v4
+-   React Router DOM
+-   Axios
+-   TanStack React Query
+-   React Hook Form
+-   React Hot Toast
+-   React Loader Spinner
+-   Headless UI
+-   React Date Picker
+-   React Tag Input
 
-⸻
+### Backend
 
-Authentication Flow
-Users authenticate using their mobile number.
-1. Register/Login
-2. Receive OTP
-3. Verify OTP
-4. Receive Authentication Tokens
-5. Complete profile(name & role &….)
-6. Administrator Approval
-7. Full Platform Access
+Backend implementation is maintained separately. This repository focuses
+on frontend development and REST API integration.
 
-⸻
+## Authentication Flow
 
-API Communication
-The frontend communicates with a RESTful API using Axios.
-Features include:
-* Centralized API Requests
-* Authentication Headers
-* Cookie Support
-* Error Handling
-* Loading States
+1.  Register / Login
+2.  Receive OTP
+3.  Verify OTP
+4.  Receive JWT Tokens
+5.  Complete Profile
+6.  Administrator Approval
+7.  Access Platform
 
-⸻
+## API Communication
 
-Routing
-The application uses React Router DOM for client-side routing.
-Example route structure:
+-   Axios Instance
+-   RESTful API Integration
+-   Cookie-based Authentication
+-   withCredentials Support
+-   Centralized API Configuration
+-   Error Handling
+-   Loading States
+
+## Routing
+
+``` text
 /
-├──
 ├── auth
 ├── complete-profile
-├── not-build
 ├── owner
-│   ├── dashboard
-│   ├── projects
-│   └── projects/:id
-│
 ├── freelancer
-│   ├── dashboard
-│   ├── proposals
-│   └── projects
-│
 ├── admin
-│   ├── dashboard
-│   ├── users
-│   ├── projects
-│   └── proposals
-│
 └── *
-└── 404 Not Found
+```
 
-⸻
+## Project Structure
 
-Responsive Design
-The application follows a Mobile-First approach and is optimized for:
-* Mobile
-* Desktop
+``` text
+src/
+├── features/
+├── hooks/
+├── pages/
+├── services/
+├── ui/
+├── utils/
+└── context/
+```
 
-⸻
+## My Responsibilities
 
-Project Structure(src)
-├── App.jsx
-├── context
-│   └── DarkMode.jsx
-├── features
-│   ├── admin
-│   │   ├── ChangeUserStatus.jsx
-│   │   ├── DashboardContainer.jsx
-│   │   ├── DashboardStats.jsx
-│   │   ├── UserTable.jsx
-│   │   ├── useAllUsers.js
-│   │   └── useChangeUserStatus.jsx
-│   ├── authentication
-│   │   ├── AuthContainer.jsx
-│   │   ├── CheckOTPForm.jsx
-│   │   ├── CompleteProfileForm.jsx
-│   │   ├── LogOut.jsx
-│   │   ├── SendOTPForm.jsx
-│   │   ├── UserAvatar.jsx
-│   │   ├── useAuthorize.js
-│   │   ├── useLogOut.js
-│   │   └── useUser.js
-│   ├── freelancer
-│   │   ├── DashboardContainer.jsx
-│   │   ├── DashboardStats.jsx
-│   │   ├── SubmittedProjects.jsx
-│   │   ├── project
-│   │   │   ├── projectsHeader.jsx
-│   │   │   └── projectsTable.jsx
-│   │   └── useProposal.js
-│   ├── home
-│   │   ├── Footer.jsx
-│   │   ├── FreelancerCard.jsx
-│   │   ├── HomeContainer.jsx
-│   │   ├── HowWorkBox.jsx
-│   │   ├── LongArow.jsx
-│   │   ├── NavBar.jsx
-│   │   ├── WorkBox.jsx
-│   │   ├── WorkWithoutBox.jsx
-│   │   └── projectCard.jsx
-│   ├── owner
-│   │   ├── DashboardContainer.jsx
-│   │   └── DashboardStats.jsx
-│   ├── project
-│   │   ├── ProjectHeader.jsx
-│   │   ├── ProposalsTable.jsx
-│   │   ├── singleProposal.jsx
-│   │   ├── useChangeProposalStatus.js
-│   │   └── useProject.js
-│   ├── projects
-│   │   ├── CreateProject.jsx
-│   │   ├── ProjectsTable.jsx
-│   │   ├── ToggleProjectStatus.jsx
-│   │   ├── useCreateProject.js
-│   │   ├── useEditProject.js
-│   │   ├── useOwnerProjects.js
-│   │   ├── useRemoveProject.js
-│   │   └── useToggleStatus.js
-│   └── proposlals
-│       ├── CreateProposal.jsx
-│       └── useProposals.js
-├── hooks
-│   ├── useAllProjects.js
-│   ├── useCategories.js
-│   ├── useLocalStoreg.js
-│   ├── useMoveBack.js
-│   └── useOutSideClick.js
-├── index.css
-├── main.jsx
-├── pages
-│   ├── AdminDashboard.jsx
-│   ├── Auth.jsx
-│   ├── CompleteProfile.jsx
-│   ├── FreelancerDashboard.jsx
-│   ├── Home.jsx
-│   ├── NotBuild.jsx
-│   ├── NotFound.jsx
-│   ├── OwnerDashboard.jsx
-│   ├── Project.jsx
-│   ├── Projects.jsx
-│   ├── Proposals.jsx
-│   └── Users.jsx
-├── services
-│   ├── authService.js
-│   ├── categoryServices.js
-│   ├── httpService.js
-│   ├── projectService.js
-│   └── proposalsService.js
-├── ui
-│   ├── AppLayout.jsx
-│   ├── ButtonDanger.jsx
-│   ├── ButtonPrimary.jsx
-│   ├── ButtonSecondary.jsx
-│   ├── ConfirmDelete.jsx
-│   ├── DarkModeToggle.jsx
-│   ├── DashboardHeader.jsx
-│   ├── DatePickerField.jsx
-│   ├── Empty.jsx
-│   ├── Filter.jsx
-│   ├── FilterDropDown.jsx
-│   ├── Footer.jsx
-│   ├── Header.jsx
-│   ├── HeaderMenu.jsx
-│   ├── Input.jsx
-│   ├── Loading.jsx
-│   ├── Modal.jsx
-│   ├── NavBarMenu.jsx
-│   ├── NavigateList.jsx
-│   ├── RadioInput.jsx
-│   ├── Select.jsx
-│   ├── SideBar.jsx
-│   ├── StatBox.jsx
-│   └── protectedRoute.jsx
-└── utils
-├── toLocalDateShort.js
-├── toPersianNumber.js
-└── truncateText.js
+-   Complete Frontend Development
+-   Responsive UI
+-   API Integration
+-   OTP Authentication Flow
+-   Protected Routes
+-   State Management
+-   Reusable Components
+-   Custom Hooks
+-   Error & Loading Handling
 
-⸻
+## Installation
 
-Installation
-Fronend:
-Clone the repository
+``` bash
 git clone https://github.com/pouyaoskuee/Freelancer-App-Client.git
-Install dependencies
 npm install
-Set environment variables
-.env.development/production.local
-Run development server
 npm run dev
+```
 
-Backend:
-Clone the repository
-git clone https://github.com/pouyaoskuee/Freelancer-App-Server.git
-Install dependencies
-npm install
-Install mongodb:
-https://www.mongodb.com
-Run mongodb database:
-mongod --dbpath ~/data/db
-Set environment variables
-.env.development/production.local
-Run development server
-npm run dev
+Create `.env.development.local`:
 
+``` env
+VITE_BASE_URL=http://localhost:9000/api
+```
 
-⸻
+Backend: https://github.com/pouyaoskuee/Freelancer-App-Server
 
-Environment Variables
-VITE_BASE_URL=
-In our project, it is: http://localhost:9000/api
-⸻
+## Screenshots
 
-Screenshots
-Add screenshots inside:
-docs/screenshots/
-Example:
-* Home
-* Login
-* OTP Verification
-* Employer Dashboard
-* Freelancer Dashboard
-* Admin Dashboard
-* Project Details
-
-⸻
-
-Future Improvements
-* Internationalization (i18n)
-* Unit Testing
-* End-to-End Testing
-* Login with email
-
-⸻
-
-Deployment
-Frontend
-GitHub:
-Demo:
+See the portfolio assets repository:
+https://github.com/pouyaoskuee/portfolio-asset/tree/main/deadlancer
 
 
-⸻
+## Future Improvements
 
-License
+-   Internationalization (i18n)
+-   Unit Testing
+-   End-to-End Testing
+-   Email Authentication
+
+## License
+
 This project is intended for educational and portfolio purposes.
-
