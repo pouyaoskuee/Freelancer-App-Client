@@ -131,7 +131,8 @@ npm run dev
 Create `.env.development.local`:
 
 ``` env
-VITE_BASE_URL=http://localhost:9000/api
+VITE_BASE_URL=<your backend API>
+ex:http://localhost:9000
 ```
 
 Backend: https://github.com/pouyaoskuee/Freelancer-App-Server
