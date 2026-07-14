@@ -1,34 +1,23 @@
 # Deadlancer - Freelancing Platform
 
-```{=html}
 <p align="center">
-```
-`<img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/homeDesktopDark2.png" width="100%">`{=html}
-```{=html}
+  <img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/homeDesktopLight.png" width="100%">
 </p>
-```
-```{=html}
+
 <p align="center">
-```
-A modern full-stack freelancing platform connecting employers with
-freelancers through a secure and responsive web application.
-```{=html}
+  A modern full-stack freelancing platform connecting employers with freelancers through a secure and responsive web application.
 </p>
-```
-```{=html}
+
 <p align="center">
-```
-`<a href="https://deadlancer.ir">`{=html}🌐 Live Demo`</a>`{=html} •
-`<a href="https://github.com/pouyaoskuee/Freelancer-App-Client">`{=html}Frontend`</a>`{=html}
-•
-`<a href="https://github.com/pouyaoskuee/Freelancer-App-Server">`{=html}Backend`</a>`{=html}
-```{=html}
+  <a href="https://deadlancer.ir">🌐 Live Demo</a> •
+  <a href="https://github.com/pouyaoskuee/Freelancer-App-Client">Frontend</a> •
+  <a href="https://github.com/pouyaoskuee/Freelancer-App-Server">Backend</a>
 </p>
-```
+
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-38BDF8?logo=tailwindcss)
-![React_Query](https://img.shields.io/badge/TanStack_Query-FF4154)
+![TanStack Query](https://img.shields.io/badge/TanStack_Query-FF4154)
 ![License](https://img.shields.io/badge/License-Portfolio-success)
 
 ------------------------------------------------------------------------
@@ -159,10 +148,26 @@ VITE_BASE_URL=http://localhost:9000/api
 
 Backend: https://github.com/pouyaoskuee/Freelancer-App-Server
 
-## Screenshots
+# 📸 Screenshots
 
-See the portfolio assets repository:
-https://github.com/pouyaoskuee/portfolio-asset/tree/main/deadlancer
+## 🏠 Landing Page
+
+| Desktop - Dark | Desktop - Light |
+| :------------: | :-------------: |
+| <img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/homeDesktopDark.png" width="500"> | <img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/homeDesktopLight0.png" width="500"> |
+
+| landing | footer | login | dashboard |
+| :----: | :----: | :----: | :----: |
+| <img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/homeMobileLight.PNG" width="260"> | <img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/homeMobileLight2.PNG" width="260"> | <img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/loginMobileLight.PNG" width="260"> | <img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/dashboardMobileDark.PNG" width="260"> |
+
+---
+
+## 📁 Project Management
+
+| Dark | Light |
+| :--: | :---: |
+| <img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/projectsDesktopDark.png" width="500"> | <img src="https://raw.githubusercontent.com/pouyaoskuee/portfolio-asset/main/deadlancer/projectsDesktopLight2.png" width="500"> |
+
 
 
 ## Future Improvements
