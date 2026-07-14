@@ -39,7 +39,7 @@ account before granting full access.
 
 ------------------------------------------------------------------------
 
-## Highlights
+## 🚀 Features
 
 -   OTP Authentication
 -   JWT Authentication
@@ -53,7 +53,7 @@ account before granting full access.
 -   Reusable Components
 -   Custom Hooks
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 ### Frontend
 
@@ -75,7 +75,7 @@ account before granting full access.
 Backend implementation is maintained separately. This repository focuses
 on frontend development and REST API integration.
 
-## Authentication Flow
+## 🔄 Authentication Flow
 
 1.  Register / Login
 2.  Receive OTP
@@ -85,7 +85,7 @@ on frontend development and REST API integration.
 6.  Administrator Approval
 7.  Access Platform
 
-## API Communication
+## 📡 API Communication
 
 -   Axios Instance
 -   RESTful API Integration
@@ -95,7 +95,7 @@ on frontend development and REST API integration.
 -   Error Handling
 -   Loading States
 
-## Routing
+## 📂 Routing
 
 ``` text
 /
@@ -107,7 +107,7 @@ on frontend development and REST API integration.
 └── *
 ```
 
-## Project Structure
+## 📂 Project Structure
 
 ``` text
 src/
@@ -120,19 +120,7 @@ src/
 └── context/
 ```
 
-## My Responsibilities
-
--   Complete Frontend Development
--   Responsive UI
--   API Integration
--   OTP Authentication Flow
--   Protected Routes
--   State Management
--   Reusable Components
--   Custom Hooks
--   Error & Loading Handling
-
-## Installation
+## ⚙️ Installation
 
 ``` bash
 git clone https://github.com/pouyaoskuee/Freelancer-App-Client.git
@@ -162,7 +150,7 @@ Backend: https://github.com/pouyaoskuee/Freelancer-App-Server
 
 ---
 
-## 📁 Project Management
+## 📑 Project Management
 
 | Dark | Light |
 | :--: | :---: |
@@ -170,13 +158,13 @@ Backend: https://github.com/pouyaoskuee/Freelancer-App-Server
 
 
 
-## Future Improvements
+## 💡 Future Improvements
 
 -   Internationalization (i18n)
 -   Unit Testing
 -   End-to-End Testing
 -   Email Authentication
 
-## License
+## 📄 License
 
 This project is intended for educational and portfolio purposes.
